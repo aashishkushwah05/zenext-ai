@@ -1,0 +1,544 @@
+/* ============================================
+   Zenext.ai — About Page (Part 1)
+   Extends the shared design system in styles.css.
+   Sections: Hero, The Problem, The Vision,
+   Built to Evolve, Our Approach.
+   ============================================ */
+
+:root {
+  /* Light-section tokens — same values used on services.html, kept
+     local here so about.html doesn't need to load services.css. */
+  --paper: #f7f6f3;
+  --paper-raised: #ffffff;
+  --ink: #111214;
+  --ink-dim: #63646c;
+  --ink-faint: #9d9ea5;
+  --line: rgba(17, 18, 20, 0.09);
+  --line-strong: rgba(17, 18, 20, 0.16);
+}
+
+.about-main {
+  background: var(--bg);
+}
+
+.about-section {
+  position: relative;
+  padding: var(--space-7) 0;
+  overflow: hidden;
+}
+
+.about-section--light {
+  background: var(--paper);
+}
+
+.about-section--dark {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.about-section--gradient {
+  background: linear-gradient(180deg, var(--bg-soft), var(--bg) 60%);
+  color: var(--text);
+}
+
+.about-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: var(--text-dim);
+  margin-bottom: var(--space-3);
+}
+
+.about-section--light .about-kicker {
+  color: var(--ink-dim);
+}
+
+.about-kicker .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 0 0 0 4px rgba(241, 122, 80, 0.15);
+}
+
+/* ============================================
+   Section 1 — Hero
+   ============================================ */
+
+.about-hero {
+  position: relative;
+  padding: calc(var(--space-7) + 3rem) 0 var(--space-6);
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 46rem;
+}
+
+.about-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.6vw, 3.6rem);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  max-width: 18ch;
+}
+
+.about-hero__title .grad {
+  background: linear-gradient(100deg, var(--blue) 10%, var(--violet) 55%, var(--coral) 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-hero__desc {
+  margin-top: var(--space-3);
+  font-size: 1.06rem;
+  color: var(--text-dim);
+  max-width: 52ch;
+  line-height: 1.7;
+}
+
+/* Animated node/line background for the hero — lightweight SVG,
+   no particle library, purely CSS-driven pulse/drift. */
+.about-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.about-hero__bg svg {
+  width: 100%;
+  height: 100%;
+}
+
+.about-hero__bg .a-line {
+  fill: none;
+  stroke: url(#aboutHeroGradient);
+  stroke-width: 1;
+  opacity: 0.35;
+  stroke-dasharray: 6 8;
+  animation: aboutLineDrift 14s linear infinite;
+}
+
+.about-hero__bg .a-node {
+  fill: var(--text-dim);
+  opacity: 0.5;
+  animation: aboutNodePulse 5s ease-in-out infinite;
+}
+
+@keyframes aboutLineDrift {
+  to { stroke-dashoffset: -140; }
+}
+
+@keyframes aboutNodePulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.85; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-hero__bg .a-line,
+  .about-hero__bg .a-node {
+    animation: none;
+  }
+}
+
+/* ============================================
+   Shared "journey" component — used by The
+   Problem, The Vision, and Our Approach. Same
+   mechanic (a connected, scroll-revealed chain
+   of stages), different colours/content/copy
+   per section so each still reads distinctly.
+   ============================================ */
+
+.journey__head {
+  max-width: 52ch;
+  margin-bottom: var(--space-5);
+}
+
+.journey__head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.about-section--light .journey__head h2 {
+  color: var(--ink);
+}
+
+.journey__head p {
+  margin-top: var(--space-2);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-width: 56ch;
+}
+
+.about-section--light .journey__head p {
+  color: var(--ink-dim);
+}
+
+.journey__track {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.journey__line {
+  position: absolute;
+  top: 15px;
+  left: 4%;
+  right: 4%;
+  height: 1px;
+  background: var(--border);
+}
+
+.about-section--light .journey__line {
+  background: var(--line);
+}
+
+.journey__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue), var(--violet), var(--coral));
+  transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey.is-visible .journey__progress {
+  width: 100%;
+}
+
+.journey__stage {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.journey.is-visible .journey__stage {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.journey.is-visible .journey__stage:nth-child(1) { transition-delay: 0.05s; }
+.journey.is-visible .journey__stage:nth-child(2) { transition-delay: 0.2s; }
+.journey.is-visible .journey__stage:nth-child(3) { transition-delay: 0.35s; }
+.journey.is-visible .journey__stage:nth-child(4) { transition-delay: 0.5s; }
+.journey.is-visible .journey__stage:nth-child(5) { transition-delay: 0.65s; }
+
+.journey__dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--surface-raised);
+  border: 1.5px solid var(--border-strong);
+  flex-shrink: 0;
+}
+
+.about-section--light .journey__dot {
+  background: var(--paper-raised);
+  border-color: var(--line-strong);
+}
+
+.journey.is-visible .journey__stage .journey__dot {
+  background: linear-gradient(120deg, var(--blue), var(--violet));
+  border-color: transparent;
+  box-shadow: 0 0 0 5px rgba(139, 123, 240, 0.16);
+}
+
+.journey__label {
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.about-section--light .journey__label {
+  color: var(--ink-dim);
+}
+
+.journey.is-visible .journey__stage:last-child .journey__label {
+  color: var(--text);
+}
+
+.about-section--light .journey.is-visible .journey__stage:last-child .journey__label {
+  color: var(--ink);
+}
+
+/* ============================================
+   Section 2 — The Problem (light)
+   ============================================ */
+
+.about-problem__note {
+  margin-top: var(--space-5);
+  max-width: 62ch;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--ink-dim);
+}
+
+/* ============================================
+   Section 3 — The Vision
+   ============================================ */
+
+.about-vision__list {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.about-vision__list span {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  border: 1px solid var(--border-strong);
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+}
+
+.about-vision__note {
+  margin-top: var(--space-3);
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  max-width: 56ch;
+}
+
+/* ============================================
+   Section 4 — Built to Evolve (light, expanding
+   node network revealed on scroll)
+   ============================================ */
+
+.evolve {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.evolve__copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.evolve__copy p {
+  margin-top: var(--space-3);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-dim);
+  max-width: 46ch;
+}
+
+.evolve__network {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.evolve__network svg {
+  width: 100%;
+  height: 100%;
+}
+
+.evolve__network .e-line {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.evolve__network .e-node {
+  fill: var(--paper-raised);
+  stroke: var(--line-strong);
+  stroke-width: 1.2;
+  opacity: 0;
+  transform-origin: center;
+  transform: scale(0.4);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.evolve__network .e-node--core {
+  fill: url(#evolveCoreGradient);
+  stroke: none;
+}
+
+.evolve__network.is-visible .e-line {
+  opacity: 1;
+}
+
+.evolve__network.is-visible .e-node {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.evolve__network.is-visible .e-node:nth-of-type(1) { transition-delay: 0.05s; }
+.evolve__network.is-visible .e-node:nth-of-type(2) { transition-delay: 0.15s; }
+.evolve__network.is-visible .e-node:nth-of-type(3) { transition-delay: 0.25s; }
+.evolve__network.is-visible .e-node:nth-of-type(4) { transition-delay: 0.35s; }
+.evolve__network.is-visible .e-node:nth-of-type(5) { transition-delay: 0.45s; }
+.evolve__network.is-visible .e-node:nth-of-type(6) { transition-delay: 0.55s; }
+.evolve__network.is-visible .e-node:nth-of-type(7) { transition-delay: 0.65s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .evolve__network .e-line,
+  .evolve__network .e-node {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 900px) {
+  .evolve {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .evolve__network {
+    order: -1;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-hero {
+    min-height: unset;
+    padding-top: calc(var(--space-6) + 3.5rem);
+  }
+
+  .journey__track {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding-left: 1.4rem;
+  }
+
+  .journey__line {
+    top: 0;
+    bottom: 0;
+    left: 6px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  .journey__progress {
+    width: 100%;
+    height: 0%;
+  }
+
+  .journey.is-visible .journey__progress {
+    height: 100%;
+  }
+
+  .journey__stage {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey__stage,
+  .journey__progress {
+    transition: none;
+    opacity: 1;
+    transform: none;
+    width: 100%;
+  }
+}
+
+
+/* ============================================
+   About Part 2 — Founder, journey and future
+   ============================================ */
+.founder-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:clamp(3rem,8vw,8rem)}
+.founder-visual{position:relative;min-height:420px;border-radius:32px;overflow:hidden;background:radial-gradient(circle at 35% 30%,rgba(78,127,232,.22),transparent 28%),radial-gradient(circle at 70% 70%,rgba(241,122,80,.18),transparent 32%),#0c1018;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 70px rgba(8,12,24,.22)}
+.founder-visual:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent)}
+.founder-core{position:absolute;left:50%;top:50%;width:112px;height:112px;transform:translate(-50%,-50%);border-radius:30px;display:grid;place-items:center;background:linear-gradient(135deg,#17294a,#10141f);border:1px solid rgba(133,164,255,.45);box-shadow:0 0 0 18px rgba(78,127,232,.05),0 0 80px rgba(78,127,232,.35)}
+.founder-core img{width:64px;height:64px;object-fit:contain}.founder-orbit{position:absolute;left:50%;top:50%;border:1px solid rgba(130,159,255,.26);border-radius:50%;transform:translate(-50%,-50%);animation:founderSpin 16s linear infinite}.founder-orbit--one{width:260px;height:260px}.founder-orbit--two{width:350px;height:350px;border-style:dashed;animation-direction:reverse;animation-duration:24s}.founder-orbit:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:#f17a50;top:16%;left:14%;box-shadow:0 0 18px #f17a50}.founder-tag{position:absolute;padding:.65rem .95rem;border-radius:999px;background:rgba(18,23,35,.86);border:1px solid rgba(255,255,255,.12);color:#dfe7ff;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(12px)}.founder-tag--one{top:14%;left:10%}.founder-tag--two{right:9%;top:30%}.founder-tag--three{left:14%;bottom:18%}.founder-signal{position:absolute;right:12%;bottom:13%;width:55px;height:55px;border-right:2px solid #f17a50;border-bottom:2px solid #4e7fe8;transform:rotate(45deg);animation:pulseSignal 2.8s ease-in-out infinite}
+.founder-copy h2,.journey-story h2,.future-card h2{font-size:clamp(2.2rem,4.2vw,4.8rem);line-height:1.04;letter-spacing:-.045em;margin:.9rem 0 1.4rem}.founder-copy p{max-width:660px;font-size:1.08rem;line-height:1.8;color:var(--text-muted)}.founder-copy strong{color:var(--text)}.founder-actions{display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;margin-top:2rem}.founder-link{font-weight:600;color:var(--text);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:.3rem}.founder-link span{margin-left:.35rem;transition:transform .25s}.founder-link:hover span{display:inline-block;transform:translateX(5px)}
+.journey-story{position:relative;overflow:hidden}.journey-story:after{content:"";position:absolute;width:600px;height:600px;right:-240px;top:-250px;border-radius:50%;background:radial-gradient(circle,rgba(78,127,232,.18),transparent 65%);pointer-events:none}.journey-story__head{max-width:780px;margin-bottom:3rem}.journey-story__head>p:last-child{color:var(--text-muted);font-size:1.08rem;line-height:1.8}.story-steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}.story-step{padding:2rem 1.5rem 2.3rem;border-right:1px solid rgba(255,255,255,.1);min-height:260px}.story-step:last-child{border-right:0}.story-step__number{display:block;font-size:.8rem;letter-spacing:.18em;color:#8295c7;margin-bottom:3.8rem}.story-step h3{font-size:1.5rem;margin:0 0 .8rem}.story-step p{color:var(--text-muted);line-height:1.7;margin:0}.story-step strong{color:#b9c8ff}
+.future-card{display:flex;justify-content:space-between;align-items:end;gap:3rem;padding:clamp(2rem,5vw,5rem);border-radius:32px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.015));box-shadow:0 24px 80px rgba(0,0,0,.15)}.future-card>div{max-width:820px}.future-card h2{max-width:760px}.future-card p:last-child{font-size:1.05rem;line-height:1.8;color:var(--text-muted)}
+.reveal-up{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}.reveal-up.is-visible{opacity:1;transform:none}.story-step.reveal-up:nth-child(2){transition-delay:.1s}.story-step.reveal-up:nth-child(3){transition-delay:.2s}.story-step.reveal-up:nth-child(4){transition-delay:.3s}
+@keyframes founderSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes pulseSignal{0%,100%{opacity:.5;transform:rotate(45deg) scale(.9)}50%{opacity:1;transform:rotate(45deg) scale(1.08)}}
+@media(max-width:900px){.founder-grid{grid-template-columns:1fr;gap:3rem}.founder-visual{min-height:360px}.story-steps{grid-template-columns:repeat(2,1fr)}.story-step:nth-child(2){border-right:0}.story-step:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.1)}.story-step__number{margin-bottom:2.5rem}.future-card{align-items:flex-start;flex-direction:column}}
+@media(max-width:600px){.founder-visual{min-height:330px;border-radius:24px}.founder-orbit--two{width:300px;height:300px}.founder-orbit--one{width:220px;height:220px}.founder-tag--one{left:7%}.founder-tag--two{right:6%}.story-steps{grid-template-columns:1fr}.story-step{border-right:0;border-bottom:1px solid rgba(255,255,255,.1);min-height:0}.story-step:last-child{border-bottom:0}.future-card{border-radius:24px}.founder-copy h2,.journey-story h2,.future-card h2{font-size:2.5rem}}
+@media(prefers-reduced-motion:reduce){.founder-orbit,.founder-signal{animation:none}.reveal-up{opacity:1;transform:none;transition:none}}
+
+
+/* ============================================
+   About page refinements — media-led visuals
+   ============================================ */
+.about-hero__video-bg{opacity:1;background:#080b12}
+.about-hero__video-bg video{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.05) contrast(1.04);transform:scale(1.02);animation:heroVideoFloat 16s ease-in-out infinite alternate}
+.about-hero__overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,7,12,.92) 0%,rgba(5,7,12,.78) 42%,rgba(5,7,12,.48) 100%),linear-gradient(180deg,rgba(5,7,12,.12),rgba(5,7,12,.72))}
+.about-hero__inner{animation:heroContentIn .9s cubic-bezier(.16,1,.3,1) both}
+.about-hero__title span{display:inline-block;animation:heroTextLift .8s cubic-bezier(.16,1,.3,1) both}
+.about-hero__title .grad{animation-delay:.1s;text-shadow:0 8px 34px rgba(92,118,230,.18)}
+@keyframes heroContentIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes heroTextLift{from{opacity:0;transform:translateY(20px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes heroVideoFloat{from{transform:scale(1.02)}to{transform:scale(1.07)}}
+
+.evolve__brand-visual{position:relative;max-width:520px;margin:0 auto;border-radius:30px;overflow:hidden;border:1px solid rgba(17,18,20,.12);box-shadow:0 28px 70px rgba(15,20,35,.16);background:#10131a;transform:translateY(0);transition:transform .5s ease,box-shadow .5s ease}
+.evolve__brand-visual:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(78,127,232,.10),transparent 45%,rgba(241,122,80,.10))}
+.evolve__brand-visual img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.evolve__brand-visual:hover{transform:translateY(-7px);box-shadow:0 38px 90px rgba(15,20,35,.23)}
+
+.founder-portfolio{background:#161616;padding:0;min-height:0;aspect-ratio:1/1;border-radius:34px;display:block;isolation:isolate}
+.founder-portfolio img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .8s ease}
+.founder-portfolio:after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.03),transparent 35%,rgba(0,0,0,.16));pointer-events:none}
+.founder-portfolio:hover img{transform:scale(1.045);filter:contrast(1.04) saturate(1.03)}
+.founder-actions .btn--primary{position:relative;overflow:hidden;isolation:isolate;transition:transform .25s ease,box-shadow .35s ease}
+.founder-actions .btn--primary:before{content:"";position:absolute;inset:-2px auto -2px -45%;width:35%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-24deg);transition:left .65s ease;z-index:-1}
+.founder-actions .btn--primary:hover{transform:translateY(-3px) scale(1.015);box-shadow:0 16px 34px rgba(78,127,232,.35)}
+.founder-actions .btn--primary:hover:before{left:120%}
+.founder-actions .btn--primary:active{transform:translateY(1px) scale(.98)}
+
+/* Founder section stays a light surface in every theme, so never inherit theme text colors here. */
+.founder-section{background:var(--paper);color:var(--ink);background-image:radial-gradient(circle at 15% 20%,rgba(78,127,232,.08),transparent 28%),radial-gradient(circle at 85% 78%,rgba(241,122,80,.08),transparent 24%)}
+.founder-section .about-kicker{color:var(--ink-dim)}
+.founder-section .founder-copy h2{color:var(--ink)}
+.founder-section .founder-copy p{color:var(--ink-dim)}
+.founder-section .founder-copy strong{color:var(--ink)}
+.founder-section .founder-link{color:var(--ink);border-color:currentColor}
+.creator-card{margin-top:clamp(2rem,5vw,4rem);display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:1.4rem;align-items:center;padding:1rem 1.2rem;border-radius:28px;border:1px solid rgba(255,255,255,.11);background:linear-gradient(120deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 18px 60px rgba(0,0,0,.14);backdrop-filter:blur(14px)}
+.creator-card__media{width:110px;height:110px;border-radius:22px;overflow:hidden;background:#151515;border:1px solid rgba(255,255,255,.1)}
+.creator-card__media img{width:100%;height:100%;object-fit:cover;display:block}
+.creator-card__eyebrow{display:block;text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;color:#91a7e8;margin-bottom:.4rem}.creator-card h3{font-size:1.35rem;margin:0 0 .45rem}.creator-card p{margin:0;color:var(--text-muted);line-height:1.6;max-width:62ch}.creator-card__link{white-space:nowrap;text-decoration:none;color:#fff;font-weight:600;padding:.8rem 1rem;border-radius:999px;border:1px solid rgba(255,255,255,.16);transition:transform .25s ease,background .25s ease}.creator-card__link:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
+@media(max-width:700px){.about-hero__video-bg video{object-position:58% center}.evolve__brand-visual{max-width:100%;border-radius:24px}.founder-portfolio{border-radius:26px}.creator-card{grid-template-columns:76px minmax(0,1fr);border-radius:22px}.creator-card__media{width:76px;height:76px;border-radius:18px}.creator-card__link{grid-column:1/-1;text-align:center}.creator-card p{font-size:.93rem}}
+@media(prefers-reduced-motion:reduce){.about-hero__video-bg video,.about-hero__inner,.about-hero__title span{animation:none}.founder-portfolio img,.evolve__brand-visual,.founder-actions .btn--primary{transition:none}}

@@ -1,0 +1,287 @@
+/* ============================================
+   Zenext.ai — Floating Chatbot
+   ============================================ */
+
+.chatbot-btn {
+  position: fixed;
+  right: var(--space-3);
+  bottom: calc(var(--space-3) + 70px);
+  z-index: 199;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 10px 26px -8px rgba(78, 127, 232, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chatbot-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.chatbot-btn svg {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+.chatbot-btn__avatar {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.chatbot-window {
+  position: fixed;
+  right: var(--space-3);
+  bottom: calc(var(--space-3) + 136px);
+  z-index: 199;
+  width: min(340px, calc(100vw - 2 * var(--space-3)));
+  max-height: min(480px, calc(100vh - 180px));
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transform-origin: bottom right;
+  transform: scale(0.92) translateY(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.chatbot-window.is-open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.chatbot-window__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-raised);
+}
+
+.chatbot-window__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.chatbot-window__title img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.chatbot-window__close {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.chatbot-window__close:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.chatbot-window__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 200px;
+}
+
+.chatbot-msg {
+  max-width: 84%;
+  padding: 0.6rem 0.85rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.chatbot-msg--bot {
+  align-self: flex-start;
+  background: var(--surface-raised);
+  color: var(--text);
+  border-bottom-left-radius: 4px;
+}
+
+.chatbot-msg--user {
+  align-self: flex-end;
+  background: linear-gradient(120deg, var(--blue-deep), var(--blue));
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.chatbot-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0 var(--space-3) var(--space-2);
+}
+
+.chatbot-quick button {
+  font-size: 0.76rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-dim);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.chatbot-quick button:hover {
+  border-color: var(--coral);
+  color: var(--text);
+}
+
+.chatbot-window__footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chatbot-window__input {
+  flex: 1;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+.chatbot-window__input::placeholder {
+  color: var(--text-faint);
+}
+
+.chatbot-window__send {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(120deg, var(--blue), var(--coral));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chatbot-window__send svg {
+  width: 15px;
+  height: 15px;
+}
+
+.chatbot-contact {
+  margin: 0 var(--space-3) var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #1fbb5c, #25d366);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.chatbot-contact svg {
+  width: 15px;
+  height: 15px;
+}
+
+@media (max-width: 480px) {
+  .chatbot-btn {
+    width: 50px;
+    height: 50px;
+    bottom: calc(var(--space-3) + 64px);
+  }
+
+  .chatbot-window {
+    bottom: calc(var(--space-3) + 122px);
+  }
+}
+
+
+/* First-visit attention cue — subtle and temporary */
+.chatbot-btn.attention-burst,
+.whatsapp-btn.attention-burst {
+  animation: zenextAttention 1.7s ease-in-out 3;
+}
+@keyframes zenextAttention {
+  0%, 100% { transform: scale(1); }
+  45% { transform: scale(1.09); }
+  65% { transform: scale(1.03); }
+}
+.chatbot-btn.attention-burst::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(88, 213, 255, 0.5);
+  border-radius: 50%;
+  animation: zenextAttentionRing 1.7s ease-out 3;
+  pointer-events: none;
+}
+@keyframes zenextAttentionRing {
+  0% { opacity: 0; transform: scale(0.85); }
+  35% { opacity: 0.65; }
+  100% { opacity: 0; transform: scale(1.45); }
+}
+
+/* Assistant typing indicator */
+.chatbot-typing {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: max-content;
+  padding: 0.7rem 0.8rem;
+  background: var(--surface-raised);
+  border-radius: 12px;
+  border-bottom-left-radius: 4px;
+}
+.chatbot-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  animation: chatbotTyping 1s infinite ease-in-out;
+}
+.chatbot-typing span:nth-child(2) { animation-delay: 0.14s; }
+.chatbot-typing span:nth-child(3) { animation-delay: 0.28s; }
+@keyframes chatbotTyping {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* WhatsApp attention ring should not run forever. It only appears during the first-visit cue. */
+.whatsapp-btn__ring { animation: none; }
+.whatsapp-btn.attention-burst .whatsapp-btn__ring { animation: ring 1.7s ease-out 3; }

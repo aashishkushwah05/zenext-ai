@@ -1,0 +1,749 @@
+/* ============================================
+   Zenext.ai — Blog Article Pages
+   Shared across every /blog-*.html article.
+   Extends styles.css (+ blog.css for the related-
+   articles grid, which reuses .blog-card).
+   ============================================ */
+
+.article-main {
+  background: var(--bg);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.2,.7,.3,1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   Breadcrumb
+   ============================================ */
+
+.article-breadcrumb {
+  padding: calc(var(--space-6) + 1rem) 0 0;
+}
+
+.article-breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.86rem;
+  color: var(--text-faint);
+}
+
+.article-breadcrumb__list a {
+  color: var(--text-dim);
+  transition: color 0.2s ease;
+}
+
+.article-breadcrumb__list a:hover {
+  color: var(--blue);
+}
+
+.article-breadcrumb__list span[aria-current] {
+  color: var(--text);
+}
+
+/* ============================================
+   Article Hero
+   ============================================ */
+
+.article-hero {
+  padding: var(--space-4) 0 var(--space-6);
+}
+
+.article-hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.article-hero__category {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: linear-gradient(100deg, var(--blue), var(--blue-deep));
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: var(--space-3);
+}
+
+.article-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  line-height: 1.16;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.article-hero__intro {
+  margin-top: var(--space-3);
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  max-width: 56ch;
+}
+
+.article-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: var(--space-4);
+  font-size: 0.86rem;
+  color: var(--text-faint);
+}
+
+.article-hero__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.article-hero__thumb {
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(120% 100% at 20% 0%, rgba(78, 127, 232, 0.22), transparent 60%),
+    var(--surface-raised);
+  aspect-ratio: 4 / 3;
+}
+
+.article-hero__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .article-hero__grid { grid-template-columns: 1fr; }
+  .article-hero__thumb { order: -1; aspect-ratio: 16/10; }
+}
+
+/* ============================================
+   Section rhythm + headings
+   ============================================ */
+
+.article-section {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border);
+}
+
+.article-section--tight {
+  padding: var(--space-5) 0;
+}
+
+.article-section__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.article-section__kicker .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 0 0 0 4px rgba(241, 122, 80, 0.15);
+}
+
+.article-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  max-width: 40ch;
+}
+
+.article-section__lede {
+  margin-top: 0.75rem;
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 68ch;
+}
+
+.article-body p {
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 72ch;
+  margin-top: 1rem;
+}
+
+.article-body p:first-child { margin-top: 0; }
+
+.article-body strong { color: var(--text); }
+
+/* ============================================
+   "What You Will Learn"
+   ============================================ */
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: var(--space-4);
+}
+
+.learn-card {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 1.1rem 1.2rem;
+}
+
+.learn-card__mark {
+  flex: 0 0 auto;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(100deg, var(--blue), var(--coral));
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-card p {
+  font-size: 0.94rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* ============================================
+   Flow diagram (vertical → horizontal on desktop)
+   ============================================ */
+
+.flow-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: var(--space-4);
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 1rem 1.3rem;
+  position: relative;
+}
+
+.flow-step__icon {
+  flex: 0 0 auto;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(78, 127, 232, 0.14);
+  color: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+}
+
+.flow-step__label strong {
+  display: block;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+.flow-step__label span {
+  font-size: 0.84rem;
+  color: var(--text-faint);
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  color: var(--text-faint);
+  position: relative;
+}
+
+.flow-arrow::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--blue), var(--coral));
+  opacity: 0.4;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flow-arrow svg {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  border-radius: 50%;
+}
+
+.flow-diagram.reveal .flow-step,
+.flow-diagram.reveal .flow-arrow {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.flow-diagram.reveal.is-visible .flow-step,
+.flow-diagram.reveal.is-visible .flow-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flow-diagram.reveal.is-visible .flow-step:nth-child(1) { transition-delay: 0.02s; }
+.flow-diagram.reveal.is-visible .flow-step:nth-child(3) { transition-delay: 0.12s; }
+.flow-diagram.reveal.is-visible .flow-step:nth-child(5) { transition-delay: 0.22s; }
+.flow-diagram.reveal.is-visible .flow-step:nth-child(7) { transition-delay: 0.32s; }
+.flow-diagram.reveal.is-visible .flow-step:nth-child(9) { transition-delay: 0.42s; }
+.flow-diagram.reveal.is-visible .flow-step:nth-child(11) { transition-delay: 0.52s; }
+.flow-diagram.reveal.is-visible .flow-step:nth-child(13) { transition-delay: 0.62s; }
+.flow-diagram.reveal.is-visible .flow-step:nth-child(15) { transition-delay: 0.72s; }
+
+@media (min-width: 760px) {
+  .flow-diagram--horizontal {
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .flow-diagram--horizontal .flow-step {
+    flex-direction: column;
+    text-align: center;
+    flex: 1 1 150px;
+  }
+  .flow-diagram--horizontal .flow-arrow {
+    height: auto;
+    width: 30px;
+    flex: 0 0 auto;
+  }
+  .flow-diagram--horizontal .flow-arrow::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+/* ============================================
+   Comparison (Traditional vs AI / two-column)
+   ============================================ */
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: var(--space-4);
+}
+
+.compare-card {
+  border-radius: var(--radius-m);
+  border: 1px solid var(--border);
+  padding: 1.4rem;
+  background: var(--surface);
+}
+
+.compare-card--accent {
+  border-color: rgba(78, 127, 232, 0.35);
+  background: linear-gradient(160deg, rgba(78, 127, 232, 0.1), var(--surface) 60%);
+}
+
+.compare-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compare-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.compare-card li {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  padding-left: 1.3rem;
+  position: relative;
+}
+
+.compare-card li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+
+.compare-card--accent li::before {
+  content: '✓';
+  color: var(--blue);
+}
+
+@media (max-width: 640px) {
+  .compare-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   Funnel
+   ============================================ */
+
+.funnel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-4);
+  max-width: 480px;
+}
+
+.funnel-step {
+  width: 100%;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-s);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  background: linear-gradient(100deg, var(--blue), var(--blue-deep));
+}
+
+.funnel-step__sub {
+  display: block;
+  font-weight: 400;
+  font-size: 0.78rem;
+  opacity: 0.85;
+  margin-top: 0.15rem;
+}
+
+.funnel-step:nth-child(1) { width: 100%; }
+.funnel-step:nth-child(2) { width: 85%; }
+.funnel-step:nth-child(3) { width: 70%; }
+.funnel-step:nth-child(4) { width: 55%; }
+.funnel-step:nth-child(5) { width: 40%; background: linear-gradient(100deg, var(--coral), var(--peach)); }
+
+.funnel-arrow {
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   Growth equation (AI business growth article)
+   ============================================ */
+
+.equation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: var(--space-4);
+}
+
+.equation-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 1rem 1.3rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1 1 160px;
+  text-align: center;
+}
+
+.equation-card--result {
+  border-color: rgba(241, 122, 80, 0.4);
+  background: linear-gradient(160deg, rgba(241, 122, 80, 0.14), var(--surface) 60%);
+}
+
+.equation-symbol {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text-faint);
+  flex: 0 0 auto;
+}
+
+/* ============================================
+   Info cards (benefits / limitations / where-AI-helps)
+   ============================================ */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: var(--space-4);
+}
+
+.info-card {
+  border-radius: var(--radius-m);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.2rem 1.3rem;
+}
+
+.info-card__icon {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.info-grid--positive .info-card__icon {
+  background: rgba(78, 127, 232, 0.16);
+  color: var(--blue);
+}
+
+.info-grid--caution .info-card__icon {
+  background: rgba(241, 122, 80, 0.16);
+  color: var(--coral);
+}
+
+.info-card h4 {
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
+}
+
+.info-card p {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.split-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+@media (max-width: 760px) {
+  .split-heading { grid-template-columns: 1fr; gap: var(--space-3); }
+}
+
+.split-heading h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ============================================
+   Animated bar chart (Digital Advertising)
+   ============================================ */
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.4rem;
+  height: 190px;
+  margin-top: var(--space-4);
+  padding: 1rem 1.2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.bar-chart__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.bar-chart__bar {
+  width: 100%;
+  max-width: 46px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, var(--blue), var(--blue-deep));
+  height: 0%;
+  transition: height 1.1s cubic-bezier(.2,.7,.3,1);
+}
+
+.bar-chart__col:nth-child(2) .bar-chart__bar { background: linear-gradient(180deg, var(--coral), var(--blue-deep)); }
+.bar-chart__col:nth-child(3) .bar-chart__bar { background: linear-gradient(180deg, var(--peach), var(--coral)); }
+
+.bar-chart.is-visible .bar-chart__bar { height: var(--bar-height, 40%); }
+
+.bar-chart__label {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.bar-chart__label strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   Pricing
+   ============================================ */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: var(--space-4);
+}
+
+.pricing-card {
+  border-radius: var(--radius-m);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.3rem 1.4rem;
+}
+
+.pricing-card h4 {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.pricing-card strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  background: linear-gradient(100deg, var(--blue) 10%, var(--coral) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pricing-note {
+  margin-top: 1rem;
+  font-size: 0.86rem;
+  color: var(--text-faint);
+  line-height: 1.6;
+  border-left: 2px solid var(--border-strong);
+  padding-left: 0.9rem;
+}
+
+/* ============================================
+   Takeaways
+   ============================================ */
+
+.takeaways {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: var(--space-4);
+}
+
+.takeaway-item {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  font-size: 0.96rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+.takeaway-item strong {
+  flex: 0 0 auto;
+  color: var(--blue);
+}
+
+/* ============================================
+   Related articles (reuses .blog-card from blog.css)
+   ============================================ */
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 980px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .related-grid { grid-template-columns: 1fr; } }
+
+/* ============================================
+   Shared responsive polish
+   ============================================ */
+
+@media (max-width: 640px) {
+  .article-breadcrumb { padding-top: var(--space-5); }
+  .article-breadcrumb__list { font-size: 0.78rem; }
+  .flow-step { padding: 0.85rem 1rem; }
+  .equation { flex-direction: column; align-items: stretch; }
+  .equation-symbol { text-align: center; }
+}
+
+
+/* ============================================
+   Final article-page polish
+   ============================================ */
+/* Blog cards normally animate in on the blog listing page. On article
+   pages there is no card observer, so related cards must always render. */
+.related-grid {
+  align-items: start;
+}
+.related-grid .blog-card {
+  opacity: 1 !important;
+  transform: none !important;
+  align-self: start;
+  height: auto;
+  min-height: 0;
+  display: flex;
+}
+.related-grid .blog-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+.related-card__desc {
+  margin: 0.15rem 0 0;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.related-grid .blog-card__meta {
+  margin-top: 0.9rem;
+}
+
+/* Article detail pages intentionally open in a clean light reading mode. */
+:root[data-page-theme='article-light'][data-theme='light'] .article-main,
+:root[data-page-theme='article-light'][data-theme='light'] .article-breadcrumb,
+:root[data-page-theme='article-light'][data-theme='light'] .article-section {
+  background: var(--bg);
+}
+
+/* Prevent excessive empty vertical areas in related sections. */
+.article-section:has(.related-grid) {
+  padding-bottom: var(--space-5);
+}
+
+@media (max-width: 640px) {
+  .related-grid .blog-card__thumb { aspect-ratio: 16 / 9; }
+  .related-card__desc { font-size: 0.86rem; }
+}

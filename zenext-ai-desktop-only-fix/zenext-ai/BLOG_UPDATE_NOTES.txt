@@ -1,0 +1,20 @@
+Zenext.ai blog update
+
+Added:
+- WhatsApp Chatbot Automation article
+- 10 Business Tasks AI Can Help Automate article
+- AI Is the Future: Human + AI Collaboration article
+- Uploaded image thumbnails copied into assets/blog
+- 100-question chatbot knowledge base (js/chatbot-knowledge.js)
+- Related article card layout fix to reduce blank/stretching space
+- Blog article count updated to 8+
+
+
+Final fixes applied:
+- Removed duplicate WhatsApp Automation, AI Business Tasks and AI Future article cards from the blog listing.
+- Removed duplicate WhatsApp Automation filter.
+- Fixed invisible/blank Related Articles sections by forcing related cards to render on article pages.
+- Added compact related article descriptions so cards contain useful knowledge instead of empty space.
+- Added a WhatsApp Automation quick learning path section.
+- Article detail pages now open in a clean light reading mode by default; the blog listing remains dark.
+- Preserved the existing 100+ question chatbot knowledge file.

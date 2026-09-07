@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html data-page-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog — Zenext.ai</title>
+<meta content="Ideas, technology and business growth — how AI, automation, digital marketing and modern technology are transforming the way businesses work and grow." name="description"/>
+<link href="assets/logo-icon.png" rel="icon"/>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="css/blog.css" rel="stylesheet"/>
+<link href="css/chatbot.css" rel="stylesheet"/>
+<script>
+  // Set the saved theme before first paint, so there's no flash of
+  // the wrong theme. Toggle wiring itself lives in js/theme.js.
+  (function () {
+    try {
+      var t = localStorage.getItem('zenext-theme');
+      var resolved = t === 'system' ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : (t === 'light' ? 'light' : 'dark'); document.documentElement.setAttribute('data-theme', resolved);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+</head>
+<body class="is-loading">
+<!-- ============================================
+     Loading Screen (brand reveal)
+     ============================================ -->
+<div aria-label="Zenext.ai is loading" class="loader" id="loader" role="status">
+<div class="loader__mark">
+<img alt="" class="loader__logo" src="assets/logo-icon.png"/>
+</div>
+<p class="loader__word">Zenext<span>.ai</span></p>
+<div class="loader__bar"><span class="loader__fill" id="loaderFill"></span></div>
+</div>
+<!-- ============================================
+     Navigation
+     ============================================ -->
+<header class="nav" id="nav">
+<div class="container nav__inner">
+<a class="nav__brand" href="index.html">
+<img alt="Zenext.ai" src="assets/logo-icon.png"/>
+<span class="nav__brand-text">Zenext<span>.ai</span></span>
+</a>
+<nav>
+<ul class="nav__links" id="navLinks">
+<li><a data-i18n="nav.home" href="index.html">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Services</a></li>
+<li><a data-i18n="nav.work" href="projects.html">Work</a></li>
+<li><a data-i18n="nav.about" href="about.html">About</a></li>
+<li><a aria-current="page" data-i18n="nav.blog" href="blog.html">Blog</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="nav__actions">
+<div class="nav__utility">
+<button aria-expanded="false" aria-label="Choose theme" aria-pressed="false" class="icon-btn" data-theme-toggle="">
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" x2="12" y1="1.5" y2="4"></line><line x1="12" x2="12" y1="20" y2="22.5"></line><line x1="1.5" x2="4" y1="12" y2="12"></line><line x1="20" x2="22.5" y1="12" y2="12"></line><line x1="4.4" x2="6.1" y1="4.4" y2="6.1"></line><line x1="17.9" x2="19.6" y1="17.9" y2="19.6"></line><line x1="4.4" x2="6.1" y1="19.6" y2="17.9"></line><line x1="17.9" x2="19.6" y1="6.1" y2="4.4"></line></svg>
+</button>
+<button aria-label="हिंदी में बदलें" class="icon-btn lang-btn" data-lang-toggle="" type="button">हिं</button>
+</div>
+<a class="btn btn--ghost btn--nav" data-i18n="nav.cta" href="contact.html">Let's Talk</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="nav__toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<main class="blog-main">
+<!-- ============================================
+     Blog Hero
+     ============================================ -->
+<section class="blog-hero">
+<div aria-hidden="true" class="blog-hero__bg">
+<div class="blog-hero__grid"></div>
+<span class="blog-hero__dot"></span><span class="blog-hero__dot"></span><span class="blog-hero__dot"></span>
+<span class="blog-hero__dot"></span><span class="blog-hero__dot"></span><span class="blog-hero__dot"></span>
+<span class="blog-hero__line blog-hero__line--1"></span>
+<span class="blog-hero__line blog-hero__line--2"></span>
+<span class="blog-hero__shape blog-hero__shape--1"></span>
+<span class="blog-hero__shape blog-hero__shape--2"></span>
+</div>
+<div class="container blog-hero__inner">
+<p class="blog-hero__eyebrow"><span class="dot"></span> <span data-i18n="blog.hero.eyebrow">Zenext.ai Blog</span></p>
+<h1 class="blog-hero__title"><span data-i18n="blog.hero.titlePre">Ideas, Technology &amp;</span> <span class="grad" data-i18n="blog.hero.titleGrad">Business Growth.</span></h1>
+<p class="blog-hero__desc" data-i18n="blog.hero.desc">Explore how AI, automation, digital marketing and modern technology are transforming the way businesses work and grow.</p>
+<div class="blog-hero__stats">
+<div class="blog-hero__stat"><strong>8</strong><span data-i18n="blog.hero.stat1">Articles</span></div>
+<div class="blog-hero__stat"><strong>5</strong><span data-i18n="blog.hero.stat2">Topics covered</span></div>
+<div class="blog-hero__stat"><strong>100%</strong><span data-i18n="blog.hero.stat3">Beginner friendly</span></div>
+</div>
+</div>
+</section>
+<!-- ============================================
+     Category Filters
+     ============================================ -->
+<section class="blog-filters">
+<div class="container">
+<div aria-label="Filter articles by category" class="blog-filters__track" id="blogFilters" role="tablist">
+<button class="blog-filter is-active" data-filter="all" data-i18n="blog.filter.all" type="button">All</button>
+<button class="blog-filter" data-filter="ai-automation" data-i18n="blog.filter.aiAutomation" type="button">AI &amp; Automation</button>
+<button class="blog-filter" data-filter="whatsapp-automation" type="button">WhatsApp Automation</button>
+
+<button class="blog-filter" data-filter="business-growth" data-i18n="blog.filter.businessGrowth" type="button">Business Growth</button>
+<button class="blog-filter" data-filter="digital-marketing" data-i18n="blog.filter.digitalMarketing" type="button">Digital Marketing</button>
+<button class="blog-filter" data-filter="content-creation" data-i18n="blog.filter.contentCreation" type="button">Content Creation</button>
+<button class="blog-filter" data-filter="technology" data-i18n="blog.filter.technology" type="button">Technology</button>
+</div>
+</div>
+</section>
+<!-- ============================================
+     Blog Grid
+     ============================================ -->
+<section class="blog-grid-section">
+<div class="container">
+<div class="blog-grid" id="blogGrid">
+<!-- 1. AI Calling Agents -->
+<a class="blog-card" data-category="ai-automation" href="blog-ai-calling-agents.html">
+<div class="blog-card__thumb">
+<span class="blog-card__category" data-i18n="blog.filter.aiAutomation">AI &amp; Automation</span>
+<img alt="AI voice calling agent" loading="lazy" src="assets/blog/ai-calling-agents.jpg"/>
+</div>
+<div class="blog-card__body">
+<h3 class="blog-card__title" data-i18n="blog.card1.title">AI Calling Agents: How AI Can Handle Customer Conversations</h3>
+<p class="blog-card__desc" data-i18n="blog.card1.desc">Understand how AI voice agents can answer calls, communicate with customers and support business operations.</p>
+<div class="blog-card__meta">
+<span class="blog-card__time">⏱ <span data-i18n="blog.card1.time">7 min read</span></span>
+<span class="blog-card__cta" data-i18n="blog.cardCta">Explore Article →</span>
+</div>
+</div>
+</a>
+<!-- 2. Meta Ads -->
+<a class="blog-card" data-category="digital-marketing" href="blog-meta-ads.html">
+<div class="blog-card__thumb">
+<span class="blog-card__category" data-i18n="blog.filter.digitalMarketing">Digital Marketing</span>
+<img alt="Meta Ads Facebook and Instagram advertising" loading="lazy" src="assets/blog/meta-ads.jpg"/>
+</div>
+<div class="blog-card__body">
+<h3 class="blog-card__title" data-i18n="blog.card2.title">Meta Ads: How Facebook and Instagram Advertising Works</h3>
+<p class="blog-card__desc" data-i18n="blog.card2.desc">Learn how businesses use Meta advertising to reach the right audience and generate leads.</p>
+<div class="blog-card__meta">
+<span class="blog-card__time">⏱ <span data-i18n="blog.card2.time">6 min read</span></span>
+<span class="blog-card__cta" data-i18n="blog.cardCta">Explore Article →</span>
+</div>
+</div>
+</a>
+<!-- 3. Content Creation -->
+<a class="blog-card" data-category="content-creation" href="blog-content-creation.html">
+<div class="blog-card__thumb">
+<span class="blog-card__category" data-i18n="blog.filter.contentCreation">Content Creation</span>
+<img alt="Content creation for social media and digital platforms" loading="lazy" src="assets/blog/content-creation.jpg"/>
+</div>
+<div class="blog-card__body">
+<h3 class="blog-card__title" data-i18n="blog.card3.title">Content Creation: Turning Ideas Into Digital Content</h3>
+<p class="blog-card__desc" data-i18n="blog.card3.desc">Explore how creative content can help businesses build attention, trust and an online presence.</p>
+<div class="blog-card__meta">
+<span class="blog-card__time">⏱ <span data-i18n="blog.card3.time">6 min read</span></span>
+<span class="blog-card__cta" data-i18n="blog.cardCta">Explore Article →</span>
+</div>
+</div>
+</a>
+<!-- 4. Digital Advertising -->
+<a class="blog-card" data-category="digital-marketing" href="blog-digital-advertising.html">
+<div class="blog-card__thumb">
+<span class="blog-card__category" data-i18n="blog.filter.digitalMarketing">Digital Marketing</span>
+<img alt="Digital advertising across online platforms" loading="lazy" src="assets/blog/digital-advertising.jpg"/>
+</div>
+<div class="blog-card__body">
+<h3 class="blog-card__title" data-i18n="blog.card4.title">Digital Advertising: Reaching Customers in the Digital World</h3>
+<p class="blog-card__desc" data-i18n="blog.card4.desc">Understand how online advertising works across platforms and how it can support business growth.</p>
+<div class="blog-card__meta">
+<span class="blog-card__time">⏱ <span data-i18n="blog.card4.time">7 min read</span></span>
+<span class="blog-card__cta" data-i18n="blog.cardCta">Explore Article →</span>
+</div>
+</div>
+</a>
+<!-- 5. AI for Business Growth -->
+<a class="blog-card" data-category="business-growth" href="blog-ai-business-growth.html">
+<div class="blog-card__thumb">
+<span class="blog-card__category" data-i18n="blog.filter.businessGrowth">Business Growth</span>
+<img alt="AI for new business growth strategies" loading="lazy" src="assets/blog/ai-business-growth.jpg"/>
+</div>
+<div class="blog-card__body">
+<h3 class="blog-card__title" data-i18n="blog.card5.title">New Business Growth Strategies With AI</h3>
+<p class="blog-card__desc" data-i18n="blog.card5.desc">Discover practical ways AI and automation can help businesses save time, improve operations and explore new growth opportunities.</p>
+<div class="blog-card__meta">
+<span class="blog-card__time">⏱ <span data-i18n="blog.card5.time">8 min read</span></span>
+<span class="blog-card__cta" data-i18n="blog.cardCta">Explore Article →</span>
+</div>
+</div>
+</a>
+<!-- 6. WhatsApp Chatbot Automation -->
+<a class="blog-card" data-category="whatsapp-automation ai-automation" href="blog-whatsapp-chatbot-automation.html">
+<div class="blog-card__thumb"><span class="blog-card__category">WhatsApp Automation</span><img alt="WhatsApp chatbot automation for business" loading="lazy" src="assets/blog/whatsapp-chatbot-automation.jpg"/></div>
+<div class="blog-card__body"><h3 class="blog-card__title">WhatsApp Chatbot Automation: How Businesses Can Respond Faster</h3><p class="blog-card__desc">Learn how a WhatsApp chatbot can answer common questions, collect leads, handle booking requests and pass complex conversations to a human.</p><div class="blog-card__meta"><span class="blog-card__time">⏱ 8 min read</span><span class="blog-card__cta">Explore Article →</span></div></div>
+</a>
+<!-- 7. 10 Business Tasks AI Can Automate -->
+<a class="blog-card" data-category="ai-automation" href="blog-ai-business-tasks.html">
+<div class="blog-card__thumb"><span class="blog-card__category">AI &amp; Automation</span><img alt="10 business tasks AI can automate" loading="lazy" src="assets/blog/ai-automation-business-tasks.jpg"/></div>
+<div class="blog-card__body"><h3 class="blog-card__title">10 Business Tasks AI Can Help Automate</h3><p class="blog-card__desc">From customer responses and appointments to follow-ups, reports and CRM updates, see where automation can remove repetitive work.</p><div class="blog-card__meta"><span class="blog-card__time">⏱ 9 min read</span><span class="blog-card__cta">Explore Article →</span></div></div>
+</a>
+<!-- 8. AI Is the Future -->
+<a class="blog-card" data-category="technology business-growth" href="blog-ai-future-business.html">
+<div class="blog-card__thumb"><span class="blog-card__category">Technology</span><img alt="Human and AI working together for the future of business" loading="lazy" src="assets/blog/ai-future-business.jpg"/></div>
+<div class="blog-card__body"><h3 class="blog-card__title">AI Is the Future: Why Human + AI Collaboration Matters</h3><p class="blog-card__desc">A beginner-friendly look at how people and AI systems can work together to improve decisions, speed and business growth.</p><div class="blog-card__meta"><span class="blog-card__time">⏱ 7 min read</span><span class="blog-card__cta">Explore Article →</span></div></div>
+</a>
+<!-- 6. WhatsApp Chatbot Automation -->
+
+<!-- 7. 10 Business Tasks AI Can Automate -->
+
+<!-- 8. AI Is the Future -->
+
+</div>
+<p class="blog-empty" data-i18n="blog.empty" id="blogEmpty">No articles in this category yet — check back soon.</p>
+</div>
+</section>
+<!-- ============================================
+     Contact CTA
+     ============================================ -->
+<section class="home-cta">
+<div class="container home-cta__inner">
+<p class="home-cta__eyebrow"><span class="dot"></span> <span data-i18n="blog.cta.eyebrow">Let's talk</span></p>
+<h2 data-i18n="blog.cta.title">Got an idea after reading this? Let's build the system around it.</h2>
+<p data-i18n="blog.cta.desc">Automation, a website, AI agents, or a full digital growth plan — tell us what you're working on and we'll take it from there.</p>
+<a class="btn btn--primary" data-i18n="blog.cta.button" href="contact.html">Start a Conversation →</a>
+</div>
+</section>
+</main>
+<!-- ============================================
+     Footer
+     ============================================ -->
+<footer class="footer">
+<div class="container">
+<div class="footer__top">
+<div class="footer__brand-block">
+<div class="footer__brand">
+<img alt="Zenext.ai" src="assets/logo-icon.png"/>
+<span>Zenext<em>.ai</em></span>
+</div>
+<p class="footer__tagline" data-i18n="footer.tagline">Systems that keep your business moving.</p>
+</div>
+<div class="footer__social">
+<a aria-label="Zenext.ai on Instagram" href="https://www.instagram.com/zennext.ai?igsi=MWIyZ3A3NWZlOWh0cg==" rel="noopener noreferrer" target="_blank"><img alt="Instagram logo" class="footer__social-logo" src="assets/social/instagram.jpg"/>
+<span>Instagram</span>
+</a>
+<a aria-label="Zenext.ai on LinkedIn" href="https://www.linkedin.com/in/aashish-kushwah-0821ba380?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" rel="noopener noreferrer" target="_blank"><img alt="LinkedIn logo" class="footer__social-logo" src="assets/social/linkedin.jpg"/>
+<span>LinkedIn</span>
+</a>
+<a aria-label="Zenext.ai on Facebook" href="https://www.facebook.com/share/1cNXXtgRaE/" rel="noopener noreferrer" target="_blank"><img alt="Facebook logo" class="footer__social-logo" src="assets/social/facebook.jpg"/>
+<span>Facebook</span>
+</a>
+</div>
+</div>
+<div class="footer__grid">
+<div>
+<p class="footer__heading" data-i18n="footer.navHeading">Navigate</p>
+<ul class="footer__links">
+<li><a data-i18n="nav.home" href="index.html#top">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Services</a></li>
+<li><a data-i18n="nav.work" href="projects.html">Work</a></li>
+<li><a data-i18n="nav.about" href="about.html">About</a></li>
+<li><a aria-current="page" data-i18n="nav.blog" href="blog.html">Blog</a></li>
+</ul>
+</div>
+<div>
+<p class="footer__heading" data-i18n="footer.servicesHeading">Services</p>
+<ul class="footer__links">
+<li><a data-i18n="card1.name" href="services.html#explorer">AI Automation &amp; Agents</a></li>
+<li><a data-i18n="tab.whatsapp.name" href="services.html#wa-feature">WhatsApp Automation</a></li>
+<li><a data-i18n="card3.name" href="services.html#explorer">Website Development</a></li>
+<li><a data-i18n="card5.name" href="services.html#explorer">Digital Advertising</a></li>
+</ul>
+</div>
+<div>
+<p class="footer__heading" data-i18n="footer.contactHeading">Contact</p>
+<ul class="footer__links">
+<li><strong>Aashish Kushwah</strong></li>
+<li><a href="tel:+917470739101">+91 7470739101</a></li>
+<li><a data-i18n="footer.whatsapp" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20talk%20about%20a%20project." rel="noopener noreferrer" target="_blank">Chat on WhatsApp</a></li>
+<li>Khargone, Madhya Pradesh</li>
+</ul>
+</div>
+</div>
+<div class="footer__bottom">
+<span>© <span id="footerYear">2026</span> Zenext.ai. <span data-i18n="footer.rights">All rights reserved.</span></span>
+</div>
+</div>
+</footer>
+<!-- ============================================
+     Floating WhatsApp Button
+     ============================================ -->
+<a aria-label="Chat with Zenext.ai on WhatsApp" class="whatsapp-btn" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20talk%20about%20a%20project." rel="noopener noreferrer" target="_blank"><span class="whatsapp-btn__tip">Chat with us</span>
+<span class="whatsapp-btn__ring"></span>
+<svg fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.02 3C9.4 3 4 8.37 4 15c0 2.29.64 4.43 1.75 6.26L4 29l7.94-1.7A11.9 11.9 0 0016.02 27C22.65 27 28 21.63 28 15S22.65 3 16.02 3z" fill="#fff"></path>
+<path d="M16.02 5.2c5.4 0 9.8 4.38 9.8 9.8 0 5.42-4.4 9.8-9.8 9.8-1.83 0-3.53-.5-5-1.37l-.36-.21-3.9.99.97-3.8-.24-.39A9.72 9.72 0 016.22 15c0-5.42 4.4-9.8 9.8-9.8z" fill="#25D366"></path>
+<path d="M12.3 9.9c-.24-.53-.5-.54-.73-.55h-.62c-.22 0-.57.08-.87.4-.3.3-1.13 1.1-1.13 2.7 0 1.58 1.16 3.11 1.32 3.33.16.21 2.24 3.55 5.5 4.83 2.72 1.07 3.28.86 3.87.8.59-.05 1.9-.77 2.17-1.52.27-.75.27-1.39.19-1.52-.08-.14-.3-.22-.63-.38-.32-.16-1.9-.94-2.2-1.05-.29-.1-.5-.16-.72.17-.21.32-.83 1.04-1.02 1.26-.19.21-.37.24-.7.08-.32-.16-1.35-.5-2.57-1.6-.95-.85-1.6-1.9-1.78-2.22-.19-.32-.02-.5.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.22.05-.4-.03-.56-.08-.16-.7-1.76-.99-2.4z" fill="#fff"></path>
+</svg>
+</a>
+<script src="js/main.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/chatbot-knowledge.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/whatsapp-tip.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en" data-page-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About — Zenext.ai</title>
+<meta content="Zenext.ai is a growing digital agency and technology startup helping businesses move from repetitive manual work toward smarter, connected digital systems." name="description"/>
+<link href="assets/logo-icon.png" rel="icon"/>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="css/about.css" rel="stylesheet"/>
+<link href="css/chatbot.css" rel="stylesheet"/>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('zenext-theme');
+      var resolved = t === 'system' ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : (t === 'light' ? 'light' : 'dark'); document.documentElement.setAttribute('data-theme', resolved);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+</head>
+<body class="is-loading">
+<!-- ============================================
+     Loading Screen (brand reveal) — unchanged
+     ============================================ -->
+<div aria-label="Zenext.ai is loading" class="loader" id="loader" role="status">
+<div class="loader__mark">
+<img alt="" class="loader__logo" src="assets/logo-icon.png"/>
+</div>
+<p class="loader__word">Zenext<span>.ai</span></p>
+<div class="loader__bar"><span class="loader__fill" id="loaderFill"></span></div>
+</div>
+<!-- ============================================
+     Navigation — unchanged, About now points here
+     ============================================ -->
+<header class="nav" id="nav">
+<div class="container nav__inner">
+<a class="nav__brand" href="index.html">
+<img alt="Zenext.ai" src="assets/logo-icon.png"/>
+<span class="nav__brand-text">Zenext<span>.ai</span></span>
+</a>
+<nav>
+<ul class="nav__links" id="navLinks">
+<li><a data-i18n="nav.home" href="index.html">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Services</a></li>
+<li><a data-i18n="nav.work" href="projects.html">Projects</a></li>
+<li><a aria-current="page" data-i18n="nav.about" href="about.html">About</a></li>
+<li><a data-i18n="nav.blog" href="blog.html">Blog</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="nav__actions">
+<div class="nav__utility">
+<button aria-label="Choose theme" aria-expanded="false" aria-pressed="false" class="icon-btn" data-theme-toggle="">
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" x2="12" y1="1.5" y2="4"></line><line x1="12" x2="12" y1="20" y2="22.5"></line><line x1="1.5" x2="4" y1="12" y2="12"></line><line x1="20" x2="22.5" y1="12" y2="12"></line><line x1="4.4" x2="6.1" y1="4.4" y2="6.1"></line><line x1="17.9" x2="19.6" y1="17.9" y2="19.6"></line><line x1="4.4" x2="6.1" y1="19.6" y2="17.9"></line><line x1="17.9" x2="19.6" y1="6.1" y2="4.4"></line></svg>
+</button>
+<button aria-label="हिंदी में बदलें" type="button" class="icon-btn lang-btn" data-lang-toggle="">हिं</button>
+</div>
+<a class="btn btn--ghost btn--nav" data-i18n="nav.cta" href="contact.html">Let's Talk</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="nav__toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<main class="about-main">
+<!-- ============================================
+     Section 1 — About Hero
+     ============================================ -->
+<section class="about-section about-section--dark about-hero">
+<div aria-hidden="true" class="about-hero__bg about-hero__video-bg">
+<video autoplay muted loop playsinline preload="metadata" poster="assets/hero-visual.jpg">
+<source src="assets/zenext-logo-animation.mp4" type="video/mp4"/>
+</video>
+<div class="about-hero__overlay"></div>
+</div>
+<div class="container about-hero__inner">
+<p class="about-kicker"><span class="dot"></span> <span data-i18n="about.kicker">About Zenext.ai</span></p>
+<h1 class="about-hero__title">
+<span data-i18n="about.heroTitlePre">We're building</span> <span class="grad" data-i18n="about.heroTitleGrad">smarter ways for businesses to work.</span>
+</h1>
+<p class="about-hero__desc" data-i18n="about.heroDesc">
+      Zenext.ai is a growing digital agency and technology startup, helping businesses move away from unnecessary manual work and toward smarter, more connected digital systems.
+    </p>
+</div>
+</section>
+<!-- ============================================
+     Section 2 — The Problem (light)
+     ============================================ -->
+<section class="about-section about-section--light">
+<div class="container">
+<div class="journey__head">
+<p class="about-kicker"><span class="dot"></span> <span data-i18n="about.problem.kicker">The problem</span></p>
+<h2 data-i18n="about.problem.heading">Most businesses aren't short on effort. They're short on systems.</h2>
+<p data-i18n="about.problem.desc">Repetitive manual work. Disconnected tools. Scattered customer information. Slow communication. Follow-ups that fall through the cracks. None of this is a people problem — it's a systems problem.</p>
+</div>
+<div class="journey">
+<div class="journey__track">
+<div class="journey__line"><div class="journey__progress"></div></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.problem.stage1">Manual</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.problem.stage2">Disconnected</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.problem.stage3">Complex</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.problem.stage4">Smarter systems</span></div>
+</div>
+</div>
+<p class="about-problem__note" data-i18n="about.problem.note">Zenext.ai exists to close that gap — replacing the manual, disconnected parts of a business with systems that stay organized and keep working on their own.</p>
+</div>
+</section>
+<!-- ============================================
+     Section 3 — What Zenext.ai is Building (dark/gradient)
+     ============================================ -->
+<section class="about-section about-section--gradient">
+<div class="container">
+<div class="journey__head">
+<p class="about-kicker"><span class="dot"></span> <span data-i18n="about.vision.kicker">What we're building</span></p>
+<h2 data-i18n="about.vision.heading">From idea to a system that runs itself.</h2>
+<p data-i18n="about.vision.desc">Zenext.ai isn't built around one field or one type of automation. The goal is broader: helping different kinds of businesses simplify their operations and move toward digital, intelligent systems.</p>
+</div>
+<div class="journey">
+<div class="journey__track">
+<div class="journey__line"><div class="journey__progress"></div></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.vision.stage1">Idea</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.vision.stage2">Digitalize</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.vision.stage3">Simplify</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.vision.stage4">Automate</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.vision.stage5">Evolve</span></div>
+</div>
+</div>
+<div class="about-vision__list">
+<span data-i18n="about.vision.tag1">AI-powered systems</span>
+<span data-i18n="about.vision.tag2">Business automation</span>
+<span data-i18n="about.vision.tag3">Customer communication</span>
+<span data-i18n="about.vision.tag4">CRM &amp; business systems</span>
+<span data-i18n="about.vision.tag5">Digital experiences</span>
+<span data-i18n="about.vision.tag6">Growth &amp; digital solutions</span>
+</div>
+<p class="about-vision__note" data-i18n="about.vision.note">This is where Zenext.ai is today — not the final limit of where it's headed.</p>
+</div>
+</section>
+<!-- ============================================
+     Section 4 — Built to Evolve (light)
+     ============================================ -->
+<section class="about-section about-section--light">
+<div class="container evolve">
+<div class="evolve__copy">
+<p class="about-kicker"><span class="dot"></span> <span data-i18n="about.evolve.kicker">More than automation</span></p>
+<h2 data-i18n="about.evolve.heading">Built to evolve.</h2>
+<p data-i18n="about.evolve.desc">Automation is one part of a larger vision — helping businesses become more digital, organized, efficient and prepared for what's next. As Zenext.ai grows, new ideas, tools and systems will keep getting added to that vision.</p>
+</div>
+<div class="evolve__brand-visual reveal-up">
+<img alt="Lift Your Brand — Zenext.ai" src="assets/lift-your-brand.jpg"/>
+</div>
+</div>
+</section>
+<!-- ============================================
+     Section 5 — Our Approach (dark)
+     ============================================ -->
+<section class="about-section about-section--dark">
+<div class="container">
+<div class="journey__head">
+<p class="about-kicker"><span class="dot"></span> <span data-i18n="about.approach.kicker">Our approach</span></p>
+<h2 data-i18n="about.approach.heading">A practical approach, not technology for its own sake.</h2>
+<p data-i18n="about.approach.desc">Every system Zenext.ai builds starts with a real problem, not a piece of technology looking for a use case.</p>
+</div>
+<div class="journey">
+<div class="journey__track">
+<div class="journey__line"><div class="journey__progress"></div></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.approach.stage1">Understand</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.approach.stage2">Identify the problem</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.approach.stage3">Design the system</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.approach.stage4">Build</span></div>
+<div class="journey__stage"><span class="journey__dot"></span><span class="journey__label" data-i18n="about.approach.stage5">Improve</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================
+     Section 6 — The Builder Behind Zenext.ai
+     ============================================ -->
+<section class="about-section about-section--light founder-section">
+<div class="container founder-grid">
+<div class="founder-visual founder-portfolio reveal-up">
+<img alt="Aashish portfolio creative work" src="assets/aashish-portfolio.jpg"/>
+</div>
+<div class="founder-copy reveal-up">
+<p class="about-kicker"><span class="dot"></span> The person behind the journey</p>
+<h2>Building in public. Learning by building.</h2>
+<p>Zenext.ai is being built by <strong>Aashish Kushwah</strong>, a Computer Science student exploring how AI, automation and modern web technology can solve practical business problems.</p>
+<p>The journey is not presented as a finished success story. It is about learning, experimenting, building real systems and improving with every project.</p>
+<div class="founder-actions">
+<a class="btn btn--primary" href="https://aashishkushwah05.github.io/Aashish-portfolio/" rel="noopener noreferrer" target="_blank">Visit My Portfolio <span>↗</span></a>
+<a class="founder-link" data-i18n="about.founder.explore" href="https://www.instagram.com/aashishstudio.ai?stkn=aHgzcjBud3phdXg5" rel="noopener noreferrer" target="_blank">Explore aashishstudio.ai →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================
+     Section 7 — Personal Journey
+     ============================================ -->
+<section class="about-section about-section--dark journey-story">
+<div class="container">
+<div class="journey-story__head reveal-up">
+<p class="about-kicker"><span class="dot"></span> The journey</p>
+<h2>Curiosity became projects. Projects became direction.</h2>
+<p>From learning technology fundamentals to experimenting with AI and building websites, every step has added to a clearer goal: create useful technology that solves something real.</p>
+</div>
+<div class="story-steps" id="storySteps">
+<article class="story-step reveal-up"><span class="story-step__number">01</span><div><h3>Learn</h3><p>Explore computer science, AI and the tools behind modern digital products.</p></div></article>
+<article class="story-step reveal-up"><span class="story-step__number">02</span><div><h3>Build</h3><p>Turn ideas into websites, experiments, automations and working concepts.</p></div></article>
+<article class="story-step reveal-up"><span class="story-step__number">03</span><div><h3>Share</h3><p>Create technology content through <strong>aashishstudio.ai</strong> around AI, useful tools, GitHub, cybersecurity and the web.</p></div></article>
+<article class="story-step reveal-up"><span class="story-step__number">04</span><div><h3>Grow</h3><p>Keep improving Zenext.ai through practical work, feedback and better systems.</p></div></article>
+</div>
+</div>
+</section>
+<!-- ============================================
+     Section 8 — Beyond the Current Version
+     ============================================ -->
+<section class="about-section about-section--gradient about-future">
+<div class="container future-card reveal-up">
+<div>
+<p class="about-kicker"><span class="dot"></span> Looking forward</p>
+<h2>This is not the finished version of the story.</h2>
+<p>Zenext.ai will continue evolving as new problems, technologies and opportunities appear. The focus stays simple: build useful systems, improve what already exists and keep moving forward.</p>
+</div>
+<a class="btn btn--primary" href="contact.html">Let's build something <span>→</span></a>
+</div>
+<div class="creator-card reveal-up">
+  <div class="creator-card__media"><img alt="AashishStudio.ai" src="assets/aashishstudio-logo.png"/></div>
+  <div class="creator-card__copy">
+    <span class="creator-card__eyebrow">Content creation</span>
+    <h3>AashishStudio.ai</h3>
+    <p>My Instagram page where I share AI, technology, useful tools, GitHub, cybersecurity and modern digital ideas.</p>
+  </div>
+  <a class="creator-card__link" href="https://www.instagram.com/aashishstudio.ai?stkn=aHgzcjBud3phdXg5" rel="noopener noreferrer" target="_blank">Visit Instagram <span>↗</span></a>
+</div>
+</section>
+</main>
+<!-- ============================================
+     Footer — unchanged from Phase 1
+     ============================================ -->
+<footer class="footer" id="contact">
+<div class="container">
+<div class="footer__top">
+<div class="footer__brand-block">
+<div class="footer__brand">
+<img alt="Zenext.ai" src="assets/logo-icon.png"/>
+<span>Zenext<em>.ai</em></span>
+</div>
+<p class="footer__tagline" data-i18n="footer.tagline">Systems that keep your business moving.</p>
+</div>
+<div class="footer__social">
+<a aria-label="Zenext.ai on Instagram" href="https://www.instagram.com/zennext.ai?igsi=MWIyZ3A3NWZlOWh0cg==" rel="noopener noreferrer" target="_blank"><img alt="Instagram logo" class="footer__social-logo" src="assets/social/instagram.jpg"/>
+
+<span>Instagram</span>
+</a>
+<a aria-label="Zenext.ai on LinkedIn" href="https://www.linkedin.com/in/aashish-kushwah-0821ba380?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" rel="noopener noreferrer" target="_blank"><img alt="LinkedIn logo" class="footer__social-logo" src="assets/social/linkedin.jpg"/>
+
+<span>LinkedIn</span>
+</a>
+<a aria-label="Zenext.ai on Facebook" href="https://www.facebook.com/share/1cNXXtgRaE/" rel="noopener noreferrer" target="_blank"><img alt="Facebook logo" class="footer__social-logo" src="assets/social/facebook.jpg"/>
+
+<span>Facebook</span>
+</a>
+</div>
+</div>
+<div class="footer__grid">
+<div>
+<p class="footer__heading" data-i18n="footer.navHeading">Navigate</p>
+<ul class="footer__links">
+<li><a data-i18n="nav.home" href="index.html#top">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Services</a></li>
+<li><a data-i18n="nav.work" href="projects.html">Projects</a></li>
+<li><a data-i18n="nav.about" href="about.html">About</a></li>
+<li><a data-i18n="nav.blog" href="blog.html">Blog</a></li>
+</ul>
+</div>
+<div>
+<p class="footer__heading" data-i18n="footer.servicesHeading">Services</p>
+<ul class="footer__links">
+<li><a data-i18n="card1.name" href="services.html#explorer">AI Automation &amp; Agents</a></li>
+<li><a data-i18n="tab.whatsapp.name" href="services.html#wa-feature">WhatsApp Automation</a></li>
+<li><a data-i18n="card3.name" href="services.html#explorer">Website Development</a></li>
+<li><a data-i18n="card5.name" href="services.html#explorer">Digital Advertising</a></li>
+</ul>
+</div>
+<div>
+<p class="footer__heading" data-i18n="footer.contactHeading">Contact</p>
+<ul class="footer__links">
+<li><strong>Aashish Kushwah</strong></li>
+<li><a href="tel:+917470739101">+91 7470739101</a></li>
+<li><a data-i18n="footer.whatsapp" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20talk%20about%20a%20project." rel="noopener noreferrer" target="_blank">Chat on WhatsApp</a></li>
+<li>Khargone, Madhya Pradesh</li>
+</ul>
+</div>
+</div>
+<div class="footer__bottom">
+<span>© <span id="footerYear">2026</span> Zenext.ai. <span data-i18n="footer.rights">All rights reserved.</span></span>
+</div>
+</div>
+</footer>
+<!-- ============================================
+     Floating WhatsApp Button — unchanged
+     ============================================ -->
+<a aria-label="Chat with Zenext.ai on WhatsApp" class="whatsapp-btn" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20talk%20about%20a%20project." rel="noopener noreferrer" target="_blank"><span class="whatsapp-btn__tip">Chat with us</span>
+<span class="whatsapp-btn__ring"></span>
+<svg fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.02 3C9.4 3 4 8.37 4 15c0 2.29.64 4.43 1.75 6.26L4 29l7.94-1.7A11.9 11.9 0 0016.02 27C22.65 27 28 21.63 28 15S22.65 3 16.02 3z" fill="#fff"></path>
+<path d="M16.02 5.2c5.4 0 9.8 4.38 9.8 9.8 0 5.42-4.4 9.8-9.8 9.8-1.83 0-3.53-.5-5-1.37l-.36-.21-3.9.99.97-3.8-.24-.39A9.72 9.72 0 016.22 15c0-5.42 4.4-9.8 9.8-9.8z" fill="#25D366"></path>
+<path d="M12.3 9.9c-.24-.53-.5-.54-.73-.55h-.62c-.22 0-.57.08-.87.4-.3.3-1.13 1.1-1.13 2.7 0 1.58 1.16 3.11 1.32 3.33.16.21 2.24 3.55 5.5 4.83 2.72 1.07 3.28.86 3.87.8.59-.05 1.9-.77 2.17-1.52.27-.75.27-1.39.19-1.52-.08-.14-.3-.22-.63-.38-.32-.16-1.9-.94-2.2-1.05-.29-.1-.5-.16-.72.17-.21.32-.83 1.04-1.02 1.26-.19.21-.37.24-.7.08-.32-.16-1.35-.5-2.57-1.6-.95-.85-1.6-1.9-1.78-2.22-.19-.32-.02-.5.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.22.05-.4-.03-.56-.08-.16-.7-1.76-.99-2.4z" fill="#fff"></path>
+</svg>
+</a>
+<script src="js/main.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/chatbot-knowledge.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/about.js"></script>
+<script src="js/whatsapp-tip.js"></script></body>
+</html>

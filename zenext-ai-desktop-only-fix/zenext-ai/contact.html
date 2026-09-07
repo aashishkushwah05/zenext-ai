@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en" data-page-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact — Zenext.ai</title>
+<meta content="Start a conversation with Zenext.ai. Tell us about your automation, website, content, or digital growth project and we'll get back to you within 24 hours." name="description"/>
+<link href="assets/logo-icon.png" rel="icon"/>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="css/contact.css" rel="stylesheet"/>
+<link href="css/chatbot.css" rel="stylesheet"/>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('zenext-theme');
+      var resolved = t === 'system' ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : (t === 'light' ? 'light' : 'dark'); document.documentElement.setAttribute('data-theme', resolved);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+</head>
+<body class="is-loading">
+<!-- ============================================
+     Loading Screen (brand reveal) — same as Phase 1
+     ============================================ -->
+<div aria-label="Zenext.ai is loading" class="loader" id="loader" role="status">
+<div class="loader__mark">
+<img alt="" class="loader__logo" src="assets/logo-icon.png"/>
+</div>
+<p class="loader__word">Zenext<span>.ai</span></p>
+<div class="loader__bar"><span class="loader__fill" id="loaderFill"></span></div>
+</div>
+<!-- ============================================
+     Navigation — unchanged from Phase 1
+     ============================================ -->
+<header class="nav" id="nav">
+<div class="container nav__inner">
+<a class="nav__brand" href="index.html">
+<img alt="Zenext.ai" src="assets/logo-icon.png"/>
+<span class="nav__brand-text">Zenext<span>.ai</span></span>
+</a>
+<nav>
+<ul class="nav__links" id="navLinks">
+<li><a data-i18n="nav.home" href="index.html">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Services</a></li>
+<li><a data-i18n="nav.work" href="projects.html">Work</a></li>
+<li><a data-i18n="nav.about" href="about.html">About</a></li>
+<li><a data-i18n="nav.blog" href="blog.html">Blog</a></li>
+<li><a aria-current="page" data-i18n="nav.contact" href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="nav__actions">
+<div class="nav__utility">
+<button aria-label="Choose theme" aria-expanded="false" aria-pressed="false" class="icon-btn" data-theme-toggle="">
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" x2="12" y1="1.5" y2="4"></line><line x1="12" x2="12" y1="20" y2="22.5"></line><line x1="1.5" x2="4" y1="12" y2="12"></line><line x1="20" x2="22.5" y1="12" y2="12"></line><line x1="4.4" x2="6.1" y1="4.4" y2="6.1"></line><line x1="17.9" x2="19.6" y1="17.9" y2="19.6"></line><line x1="4.4" x2="6.1" y1="19.6" y2="17.9"></line><line x1="17.9" x2="19.6" y1="6.1" y2="4.4"></line></svg>
+</button>
+<button aria-label="हिंदी में बदलें" type="button" class="icon-btn lang-btn" data-lang-toggle="">हिं</button>
+</div>
+<a class="btn btn--ghost btn--nav" data-i18n="nav.cta" href="contact.html">Let's Talk</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="nav__toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<main class="contact-page">
+<!-- ============================================
+     Contact
+     ============================================ -->
+<section class="contact" id="contact">
+<div class="container contact__grid">
+<!-- LEFT — visual + copy -->
+<div class="contact__visual">
+<p class="contact__eyebrow"><span class="dot"></span> <span data-i18n="contact.eyebrow">Let's talk</span></p>
+<h1 class="contact__heading" data-i18n="contact.title">Let's Start a Conversation.</h1>
+<p class="contact__lede" data-i18n="contact.lede">You've made it this far — now tell us, what are you looking for and how can we help you?</p>
+<p class="contact__sub" data-i18n="contact.sub">Whether you need automation, a website, creative content, or a digital growth solution, we'd love to hear about your idea.</p>
+<div class="contact__intro-video-wrap">
+  <video class="contact__intro-video" autoplay muted loop playsinline preload="metadata" aria-label="Zenext.ai contact introduction animation">
+    <source src="assets/contact/contact-intro.mp4" type="video/mp4"/>
+  </video>
+</div>
+</div>
+<!-- RIGHT — form card -->
+<div class="contact__form-wrap">
+<form class="contact__form" id="contactForm" novalidate="">
+<div class="contact__field">
+<label for="cfName" data-i18n="contact.form.name">Full Name</label>
+<input autocomplete="name" id="cfName" name="name" placeholder="Your full name" data-i18n-placeholder="contact.form.namePh" required="" type="text"/>
+</div>
+<div class="contact__field-row">
+<div class="contact__field">
+<label for="cfEmail" data-i18n="contact.form.email">Email Address</label>
+<input autocomplete="email" id="cfEmail" name="email" placeholder="you@company.com" data-i18n-placeholder="contact.form.emailPh" required="" type="email"/>
+</div>
+<div class="contact__field">
+<label for="cfPhone" data-i18n="contact.form.phone">Phone / WhatsApp Number</label>
+<input autocomplete="tel" id="cfPhone" name="phone" placeholder="+91 00000 00000" data-i18n-placeholder="contact.form.phonePh" required="" type="tel"/>
+</div>
+</div>
+<div class="contact__field">
+<label for="cfCompany"><span data-i18n="contact.form.company">Business / Company Name</span> <span data-i18n="contact.form.optional">(optional)</span></label>
+<input autocomplete="organization" id="cfCompany" name="company" placeholder="Your business name" data-i18n-placeholder="contact.form.companyPh" type="text"/>
+</div>
+<div class="contact__field">
+<label id="cfServiceLabel" data-i18n="contact.form.service">What can we help you with?</label>
+<div aria-labelledby="cfServiceLabel" class="contact__chips" role="group">
+<button class="contact__chip-option" data-service="AI Automation" type="button" data-i18n="contact.service.ai">AI Automation</button>
+<button class="contact__chip-option" data-service="WhatsApp Automation" type="button" data-i18n="contact.service.wa">WhatsApp Automation</button>
+<button class="contact__chip-option" data-service="Website Development" type="button" data-i18n="contact.service.web">Website Development</button>
+<button class="contact__chip-option" data-service="AI Agents &amp; Voice Calling" type="button" data-i18n="contact.service.voice">AI Agents &amp; Voice Calling</button>
+<button class="contact__chip-option" data-service="Content Creation" type="button" data-i18n="contact.service.content">Content Creation</button>
+<button class="contact__chip-option" data-service="Digital Advertising" type="button" data-i18n="contact.service.ads">Digital Advertising</button>
+<button class="contact__chip-option" data-service="Other" type="button" data-i18n="contact.service.other">Other</button>
+</div>
+<input id="cfService" name="service" required="" type="hidden"/>
+</div>
+<div class="contact__field">
+<label for="cfMessage" data-i18n="contact.form.message">Tell us about your project</label>
+<textarea id="cfMessage" name="message" placeholder="What are you trying to build or improve?" data-i18n-placeholder="contact.form.messagePh" required="" rows="4"></textarea>
+</div>
+<button class="btn btn--primary contact__submit" id="contactSubmit" type="submit">
+<span class="contact__submit-label" data-i18n="contact.form.submit">Share Your Idea →</span>
+<span aria-hidden="true" class="contact__spinner"></span>
+</button>
+<p class="contact__reply-time" data-i18n="contact.form.reply">Your email app will open with your enquiry details ready to send.</p>
+<p class="contact__privacy">🔒 <span data-i18n="contact.form.privacy">Your information stays private and is only used to respond to your inquiry.</span></p>
+</form>
+<div class="contact__success" hidden="" id="contactSuccess">
+<svg class="contact__success-check" fill="none" viewbox="0 0 52 52">
+<circle class="contact__success-circle" cx="26" cy="26" r="23" stroke="currentColor" stroke-width="2.5"></circle>
+<path class="contact__success-tick" d="M15 27l7 7 15-15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+</svg>
+<h3 data-i18n="contact.success.title">Your idea is on its way. 🚀</h3>
+<p data-i18n="contact.success.desc">Once you send the prepared email, we'll receive your enquiry and get back to you soon.</p>
+<button class="btn btn--ghost" id="contactReset" type="button" data-i18n="contact.success.reset">Send another message</button>
+</div>
+</div>
+</div>
+<div class="contact__after-form">
+<!-- What happens next -->
+<div class="container contact__journey">
+<div class="contact__journey-step">
+<span class="contact__journey-num">01</span>
+<div>
+<strong data-i18n="contact.step1.title">You share your idea</strong>
+<p data-i18n="contact.step1.desc">Tell us what you're trying to build or fix.</p>
+</div>
+</div>
+<div class="contact__journey-step">
+<span class="contact__journey-num">02</span>
+<div>
+<strong data-i18n="contact.step2.title">We understand your requirements</strong>
+<p data-i18n="contact.step2.desc">We ask the right questions before proposing anything.</p>
+</div>
+</div>
+<div class="contact__journey-step">
+<span class="contact__journey-num">03</span>
+<div>
+<strong data-i18n="contact.step3.title">We build the right solution</strong>
+<p data-i18n="contact.step3.desc">Scoped, built, and shipped around what you actually need.</p>
+</div>
+</div>
+</div>
+<!-- Quick contact / social -->
+<div class="container contact__quick">
+  <span class="contact__quick-label" data-i18n="contact.quick.label">Or reach us directly</span>
+  <div class="contact__quick-links">
+    <a href="mailto:aashishai530@gmail.com" aria-label="Email Zenext.ai">
+      <img src="assets/contact/gmail.jpg" alt="Gmail"/><span data-i18n="contact.quick.email">Email</span>
+    </a>
+    <a href="https://www.instagram.com/aashishstudio.ai?stkn=aHgzcjBud3phdXg5" rel="noopener noreferrer" target="_blank" aria-label="Aashish Studio on Instagram">
+      <img src="assets/social/instagram.jpg" alt="Instagram"/><span>Instagram</span>
+    </a>
+    <a href="https://www.linkedin.com/in/aashish-kushwah-0821ba380?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" rel="noopener noreferrer" target="_blank" aria-label="Aashish Kushwah on LinkedIn">
+      <img src="assets/social/linkedin.jpg" alt="LinkedIn"/><span>LinkedIn</span>
+    </a>
+    <a href="https://www.facebook.com/share/1cNXXtgRaE/" rel="noopener noreferrer" target="_blank" aria-label="Zenext.ai on Facebook">
+      <img src="assets/social/facebook.jpg" alt="Facebook"/><span>Facebook</span>
+    </a>
+  </div>
+</div>
+<!-- Your idea / location video -->
+<div class="container">
+  <div class="contact__video-block" id="contactVideoBlock">
+    <div class="contact__video-head">
+      <img class="contact__send-art" src="assets/contact/message-send.jpg" alt=""/>
+      <h2 data-i18n="contact.video.title">Your Idea Could Be Next.</h2>
+      <p data-i18n="contact.video.desc">From anywhere in the world to Khargone, Madhya Pradesh — great ideas can start with a simple conversation.</p>
+    </div>
+    <div class="contact__video-frame">
+      <video class="contact__video" autoplay muted loop playsinline preload="metadata" poster="assets/contact/earth-video-poster.jpg" aria-label="Earth to Khargone, Madhya Pradesh animation">
+        <source src="assets/contact/earth-to-khargone.mp4" type="video/mp4"/>
+      </video>
+      <div class="contact__video-shade"></div>
+      <div class="contact__video-location" aria-hidden="true">
+        <span class="contact__video-pulse"></span>
+        <div><small data-i18n="contact.video.locationLabel">LOCATION</small><strong>Khargone, Madhya Pradesh</strong></div>
+      </div>
+    </div>
+    <p class="contact__video-note" data-i18n="contact.video.note">A journey from the world to the place where the conversation begins.</p>
+  </div>
+</div>
+</div>
+</section>
+</main>
+<!-- ============================================
+     Footer
+     ============================================ -->
+<footer class="footer">
+<div class="container">
+<div class="footer__top">
+<div class="footer__brand-block">
+<div class="footer__brand">
+<img alt="Zenext.ai" src="assets/logo-icon.png"/>
+<span>Zenext<em>.ai</em></span>
+</div>
+<p class="footer__tagline" data-i18n="footer.tagline">Systems that keep your business moving.</p>
+</div>
+<div class="footer__social">
+<a aria-label="Zenext.ai on Instagram" href="https://www.instagram.com/zennext.ai?igsi=MWIyZ3A3NWZlOWh0cg==" rel="noopener noreferrer" target="_blank"><img alt="Instagram logo" class="footer__social-logo" src="assets/social/instagram.jpg"/>
+
+<span>Instagram</span>
+</a>
+<a aria-label="Zenext.ai on LinkedIn" href="https://www.linkedin.com/in/aashish-kushwah-0821ba380?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" rel="noopener noreferrer" target="_blank"><img alt="LinkedIn logo" class="footer__social-logo" src="assets/social/linkedin.jpg"/>
+
+<span>LinkedIn</span>
+</a>
+<a aria-label="Zenext.ai on Facebook" href="https://www.facebook.com/share/1cNXXtgRaE/" rel="noopener noreferrer" target="_blank"><img alt="Facebook logo" class="footer__social-logo" src="assets/social/facebook.jpg"/>
+
+<span>Facebook</span>
+</a>
+</div>
+</div>
+<div class="footer__grid">
+<div>
+<p class="footer__heading" data-i18n="footer.navHeading">Navigate</p>
+<ul class="footer__links">
+<li><a data-i18n="nav.home" href="index.html">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Services</a></li>
+<li><a data-i18n="nav.work" href="projects.html">Work</a></li>
+<li><a data-i18n="nav.about" href="about.html">About</a></li>
+<li><a data-i18n="nav.blog" href="blog.html">Blog</a></li>
+</ul>
+</div>
+<div>
+<p class="footer__heading" data-i18n="footer.servicesHeading">Services</p>
+<ul class="footer__links">
+<li><a data-i18n="card1.name" href="services.html#explorer">AI Automation &amp; Agents</a></li>
+<li><a data-i18n="tab.whatsapp.name" href="services.html#wa-feature">WhatsApp Automation</a></li>
+<li><a data-i18n="card3.name" href="services.html#explorer">Website Development</a></li>
+<li><a data-i18n="card5.name" href="services.html#explorer">Digital Advertising</a></li>
+</ul>
+</div>
+<div>
+<p class="footer__heading" data-i18n="footer.contactHeading">Contact</p>
+<ul class="footer__links">
+<li><strong>Aashish Kushwah</strong></li>
+<li><a href="tel:+917470739101">+91 7470739101</a></li>
+<li><a data-i18n="footer.whatsapp" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20talk%20about%20a%20project." rel="noopener noreferrer" target="_blank">Chat on WhatsApp</a></li>
+<li>Khargone, Madhya Pradesh</li>
+</ul>
+</div>
+</div>
+<div class="footer__bottom">
+<span>© <span id="footerYear">2026</span> Zenext.ai. <span data-i18n="footer.rights">All rights reserved.</span></span>
+</div>
+</div>
+</footer>
+<!-- ============================================
+     Floating WhatsApp Button — unchanged from Phase 1
+     ============================================ -->
+<a aria-label="Chat with Zenext.ai on WhatsApp" class="whatsapp-btn" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20talk%20about%20a%20project." rel="noopener noreferrer" target="_blank"><span class="whatsapp-btn__tip">Chat with us</span>
+<span class="whatsapp-btn__ring"></span>
+<svg fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.02 3C9.4 3 4 8.37 4 15c0 2.29.64 4.43 1.75 6.26L4 29l7.94-1.7A11.9 11.9 0 0016.02 27C22.65 27 28 21.63 28 15S22.65 3 16.02 3z" fill="#fff"></path>
+<path d="M16.02 5.2c5.4 0 9.8 4.38 9.8 9.8 0 5.42-4.4 9.8-9.8 9.8-1.83 0-3.53-.5-5-1.37l-.36-.21-3.9.99.97-3.8-.24-.39A9.72 9.72 0 016.22 15c0-5.42 4.4-9.8 9.8-9.8z" fill="#25D366"></path>
+<path d="M12.3 9.9c-.24-.53-.5-.54-.73-.55h-.62c-.22 0-.57.08-.87.4-.3.3-1.13 1.1-1.13 2.7 0 1.58 1.16 3.11 1.32 3.33.16.21 2.24 3.55 5.5 4.83 2.72 1.07 3.28.86 3.87.8.59-.05 1.9-.77 2.17-1.52.27-.75.27-1.39.19-1.52-.08-.14-.3-.22-.63-.38-.32-.16-1.9-.94-2.2-1.05-.29-.1-.5-.16-.72.17-.21.32-.83 1.04-1.02 1.26-.19.21-.37.24-.7.08-.32-.16-1.35-.5-2.57-1.6-.95-.85-1.6-1.9-1.78-2.22-.19-.32-.02-.5.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.22.05-.4-.03-.56-.08-.16-.7-1.76-.99-2.4z" fill="#fff"></path>
+</svg>
+</a>
+<script src="js/main.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/chatbot-knowledge.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/whatsapp-tip.js"></script></body>
+</html>

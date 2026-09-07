@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html lang="en" data-page-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects — Zenext.ai</title>
+<meta content="A showcase of AI automation, calling agents, CRM systems, growth campaigns and creative work built by Zenext.ai." name="description"/>
+<link href="assets/logo-icon.png" rel="icon"/>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="css/projects.css" rel="stylesheet"/>
+<link href="css/chatbot.css" rel="stylesheet"/>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('zenext-theme');
+      var resolved = t === 'system' ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : (t === 'light' ? 'light' : 'dark'); document.documentElement.setAttribute('data-theme', resolved);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+</head>
+<body class="is-loading">
+<!-- ============================================
+     Loading Screen (brand reveal) — unchanged from Phase 1
+     ============================================ -->
+<div aria-label="Zenext.ai is loading" class="loader" id="loader" role="status">
+<div class="loader__mark">
+<img alt="" class="loader__logo" src="assets/logo-icon.png"/>
+</div>
+<p class="loader__word">Zenext<span>.ai</span></p>
+<div class="loader__bar"><span class="loader__fill" id="loaderFill"></span></div>
+</div>
+<!-- ============================================
+     Navigation — unchanged from Phase 1, "Work" now points here
+     ============================================ -->
+<header class="nav" id="nav">
+<div class="container nav__inner">
+<a class="nav__brand" href="index.html">
+<img alt="Zenext.ai" src="assets/logo-icon.png"/>
+<span class="nav__brand-text">Zenext<span>.ai</span></span>
+</a>
+<nav>
+<ul class="nav__links" id="navLinks">
+<li><a data-i18n="nav.home" href="index.html">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Services</a></li>
+<li><a aria-current="page" data-i18n="nav.work" href="projects.html">Work</a></li>
+<li><a data-i18n="nav.about" href="about.html">About</a></li>
+<li><a data-i18n="nav.blog" href="blog.html">Blog</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="nav__actions">
+<div class="nav__utility">
+<button aria-label="Choose theme" aria-expanded="false" aria-pressed="false" class="icon-btn" data-theme-toggle="">
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" x2="12" y1="1.5" y2="4"></line><line x1="12" x2="12" y1="20" y2="22.5"></line><line x1="1.5" x2="4" y1="12" y2="12"></line><line x1="20" x2="22.5" y1="12" y2="12"></line><line x1="4.4" x2="6.1" y1="4.4" y2="6.1"></line><line x1="17.9" x2="19.6" y1="17.9" y2="19.6"></line><line x1="4.4" x2="6.1" y1="19.6" y2="17.9"></line><line x1="17.9" x2="19.6" y1="6.1" y2="4.4"></line></svg>
+</button>
+<button aria-label="हिंदी में बदलें" type="button" class="icon-btn lang-btn" data-lang-toggle="">हिं</button>
+</div>
+<a class="btn btn--ghost btn--nav" data-i18n="nav.cta" href="contact.html">Let's Talk</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="nav__toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<main class="proj-main">
+<!-- ============================================
+     Hero
+     ============================================ -->
+<section class="proj-hero">
+<div aria-hidden="true" class="proj-hero__bg">
+<div class="proj-hero__grid"></div>
+<span class="proj-hero__orb proj-hero__orb--a"></span>
+<span class="proj-hero__orb proj-hero__orb--b"></span>
+<span class="proj-hero__orb proj-hero__orb--c"></span>
+<svg class="proj-hero__paths" preserveaspectratio="none" viewbox="0 0 1200 500">
+<defs>
+<lineargradient id="projHeroGrad" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#4e7fe8"></stop>
+<stop offset="55%" stop-color="#58d5ff"></stop>
+<stop offset="100%" stop-color="#f17a50"></stop>
+</lineargradient>
+</defs>
+<path d="M-50,120 C250,60 450,220 750,140 S1100,60 1260,150"></path>
+<path d="M-50,320 C280,380 520,220 820,300 S1150,380 1260,300"></path>
+<path d="M-50,220 C300,180 600,260 900,210 S1150,260 1260,220"></path>
+</svg>
+</div>
+<div class="container proj-hero__inner">
+<p class="proj-eyebrow"><span class="dot"></span> Selected Work / Zenext Projects</p>
+<h1 class="proj-hero__title proj-heading">Ideas into <span class="grad">intelligent experiences.</span></h1>
+<p class="proj-hero__desc">A collection of digital systems, automation experiences, growth tools, and creative solutions designed around real business needs.</p>
+<div class="proj-hero__stats">
+<div class="proj-hero__stat"><strong>08</strong><span>Systems built</span></div>
+<div class="proj-hero__stat"><strong>04</strong><span>Solution categories</span></div>
+<div class="proj-hero__stat"><strong>24/7</strong><span>Automated operation</span></div>
+</div>
+</div>
+</section>
+<!-- ============================================
+     Category filter
+     ============================================ -->
+<div class="proj-filter">
+<div class="container proj-filter__inner">
+<button class="proj-filter__btn is-active" data-filter="all">All Projects</button>
+<button class="proj-filter__btn" data-filter="automation">Automation</button>
+<button class="proj-filter__btn" data-filter="ai">AI Systems</button>
+<button class="proj-filter__btn" data-filter="growth">Growth</button>
+<button class="proj-filter__btn" data-filter="digital">Digital Experience</button>
+</div>
+</div>
+<!-- ============================================
+     Project list
+     ============================================ -->
+<div class="proj-list">
+<!-- 01 — WhatsApp Automation & Smart CRM -->
+<section class="proj proj--p01" data-category="automation" data-reveal="">
+<span class="proj__index">01 / 08</span>
+<div class="container proj__inner">
+<div class="proj__copy">
+<span class="proj__num">01</span>
+<span class="proj__cat">Business Automation</span>
+<h2 class="proj__title">WhatsApp Automation &amp; Smart CRM</h2>
+<p class="proj__desc">Customer conversations come in on WhatsApp and land straight in a connected CRM — leads, contact details, and message history organized automatically instead of scattered across chats.</p>
+<ul class="proj__caps">
+<li>Automated WhatsApp conversations</li>
+<li>Lead capture</li>
+<li>Customer information management</li>
+<li>Centralized communication</li>
+<li>Follow-up workflows</li>
+<li>Business dashboard</li>
+</ul>
+<a class="proj__cta" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20know%20more%20about%20the%20WhatsApp%20Automation%20%26%20Smart%20CRM%20project." rel="noopener noreferrer" target="_blank">
+          Explore Project
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+<div class="proj__visual">
+<img alt="WhatsApp conversation connected to a CRM dashboard showing leads and analytics" loading="lazy" src="assets/projects/project01-whatsapp-crm.jpg"/>
+</div>
+</div>
+</section>
+<!-- 02 — AI Calling Agent -->
+<section class="proj proj--p02" data-category="ai" data-reveal="">
+<span class="proj__index">02 / 08</span>
+<div aria-hidden="true" class="proj__waveform">
+<span style="animation-delay:0s"></span><span style="animation-delay:0.1s"></span><span style="animation-delay:0.2s"></span>
+<span style="animation-delay:0.05s"></span><span style="animation-delay:0.3s"></span><span style="animation-delay:0.15s"></span>
+<span style="animation-delay:0.25s"></span><span style="animation-delay:0.08s"></span><span style="animation-delay:0.35s"></span>
+</div>
+<div aria-hidden="true" class="proj__badges">
+<span class="proj__badge">CALLING</span>
+<span class="proj__badge">ANALYZING</span>
+<span class="proj__badge">CONNECTED</span>
+</div>
+<div class="container proj__inner proj--reverse">
+<div class="proj__visual">
+<img alt="Automated calling dashboard showing dialer, agents and call analytics" loading="lazy" src="assets/projects/project02-ai-calling.jpg"/>
+</div>
+<div class="proj__copy">
+<span class="proj__num">02</span>
+<span class="proj__cat">AI Automation</span>
+<h2 class="proj__title">AI Calling Agent</h2>
+<p class="proj__desc">An intelligent calling solution that handles outreach, qualifies conversations, and follows up automatically — so customer communication scales without scaling headcount.</p>
+<ul class="proj__caps">
+<li>Automated outbound calling</li>
+<li>AI-powered conversations</li>
+<li>Call tracking</li>
+<li>Customer qualification</li>
+<li>Analytics</li>
+<li>Smart follow-up</li>
+</ul>
+<a class="proj__cta" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20know%20more%20about%20the%20AI%20Calling%20Agent%20project." rel="noopener noreferrer" target="_blank">
+          Explore Project
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</div>
+</section>
+<!-- 03 — Meta Ads & Performance Growth -->
+<section class="proj proj--p03" data-category="growth" data-reveal="">
+<span class="proj__index">03 / 08</span>
+<div class="container proj__inner">
+<div class="proj__copy">
+<span class="proj__num">03</span>
+<span class="proj__cat">Growth System</span>
+<h2 class="proj__title">Meta Ads &amp; Performance Growth</h2>
+<p class="proj__desc">Campaigns built around reach, engagement and conversion — targeted, tracked and optimized so ad spend turns into qualified leads instead of just impressions.</p>
+<div aria-hidden="true" class="proj__stages">
+<span class="proj__stage">REACH</span>
+<span class="proj__stage">ENGAGEMENT</span>
+<span class="proj__stage">CONVERSION</span>
+</div>
+<ul class="proj__caps">
+<li>Campaign strategy</li>
+<li>Audience targeting</li>
+<li>Creative direction</li>
+<li>Performance tracking</li>
+<li>Lead generation</li>
+<li>Conversion-focused optimisation</li>
+</ul>
+<a class="proj__cta" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Meta%20Ads%20%26%20Performance%20Growth%20project." rel="noopener noreferrer" target="_blank">
+          Explore Project
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+<div class="proj__visual">
+<img alt="Meta Ads visual showing maximum reach, engagement and conversions" loading="lazy" src="assets/projects/project03-meta-ads.jpg"/>
+</div>
+</div>
+</section>
+<!-- 04 — Creative Content Production -->
+<section class="proj proj--p04" data-category="digital" data-reveal="">
+<span class="proj__index">04 / 08</span>
+<div aria-hidden="true" class="proj__fragments">
+<span>CREATE</span><span>CAPTURE</span><span>CONNECT</span>
+</div>
+<div class="container proj__inner proj--reverse">
+<div class="proj__visual">
+<img alt="Creative content production collage with camera, clapperboard and film reel" loading="lazy" src="assets/projects/project04-content.jpg"/>
+</div>
+<div class="proj__copy">
+<span class="proj__num">04</span>
+<span class="proj__cat">Creative</span>
+<h2 class="proj__title">Creative Content Production</h2>
+<p class="proj__desc">Visual content built to help brands communicate clearly, hold attention, and build a stronger digital presence across every platform they show up on.</p>
+<ul class="proj__caps">
+<li>Social media creatives</li>
+<li>Visual storytelling</li>
+<li>Video concepts</li>
+<li>Content strategy</li>
+<li>Brand-focused creative assets</li>
+</ul>
+<a class="proj__cta" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Creative%20Content%20Production%20project." rel="noopener noreferrer" target="_blank">
+          Explore Project
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</div>
+</section>
+<!-- 05 — Smart Lead Generation -->
+<section class="proj proj--p05" data-category="growth" data-reveal="">
+<span class="proj__index">05 / 08</span>
+<div class="container proj__inner">
+<div class="proj__copy">
+<span class="proj__num">05</span>
+<span class="proj__cat">Growth &amp; Leads</span>
+<h2 class="proj__title">Smart Lead Generation</h2>
+<p class="proj__desc">Systems that help a business attract, identify and organize potential customers — turning a broad audience into a focused, qualified group worth following up with.</p>
+<div aria-hidden="true" class="proj__journey">
+<span>AUDIENCE</span><span>→</span><span>TARGET</span><span>→</span><span class="is-active">QUALIFY</span><span>→</span><span>CONVERT</span>
+</div>
+<ul class="proj__caps">
+<li>Lead generation</li>
+<li>Audience targeting</li>
+<li>Customer segmentation</li>
+<li>Lead qualification</li>
+<li>Contact organization</li>
+<li>Follow-up opportunities</li>
+</ul>
+<a class="proj__cta" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Smart%20Lead%20Generation%20project." rel="noopener noreferrer" target="_blank">
+          Explore Project
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+<div class="proj__visual">
+<svg class="proj__lines" viewbox="0 0 400 320">
+<path d="M30,60 L150,150 L370,150" fill="none" stroke="#4e7fe8" stroke-width="1.4"></path>
+<path d="M30,220 L150,150" fill="none" stroke="#58d5ff" stroke-width="1.4"></path>
+<circle class="proj__node-dot" fill="#4e7fe8" r="4"><animatemotion dur="3.8s" path="M30,60 L150,150 L370,150" repeatcount="indefinite"></animatemotion></circle>
+</svg>
+<img alt="A hand highlighting a targeted group of leads out of a wider audience" loading="lazy" src="assets/projects/project05-lead-gen.jpg"/>
+</div>
+</div>
+</section>
+<!-- 06 — Smart CRM Ecosystem -->
+<section class="proj proj--p06" data-category="automation" data-reveal="">
+<span class="proj__index">06 / 08</span>
+<div aria-hidden="true" class="proj__grid-bg"></div>
+<div aria-hidden="true" class="proj__labels">
+<span>LEADS</span><span>CUSTOMERS</span><span>ACTIVITY</span><span>ANALYTICS</span>
+</div>
+<div class="container proj__inner proj--reverse">
+<div class="proj__visual">
+<img alt="Modern business dashboard interface with analytics panels and charts" loading="lazy" src="assets/projects/project06-crm-dashboard.jpg"/>
+</div>
+<div class="proj__copy">
+<span class="proj__num">06</span>
+<span class="proj__cat">Business System</span>
+<h2 class="proj__title">Smart CRM Ecosystem</h2>
+<p class="proj__desc">A centralized system for managing customers, leads, communication and activity in one organized environment — built to be the operational core a growing business runs on.</p>
+<ul class="proj__caps">
+<li>Customer management</li>
+<li>Lead tracking</li>
+<li>Business dashboard</li>
+<li>Analytics</li>
+<li>Customer activity</li>
+<li>Workflow organization</li>
+</ul>
+<a class="proj__cta" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Smart%20CRM%20Ecosystem%20project." rel="noopener noreferrer" target="_blank">
+          Explore Project
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</div>
+</section>
+<!-- 07 — Connected Business Workflows -->
+<section class="proj proj--p07" data-category="automation" data-reveal="">
+<span class="proj__index">07 / 08</span>
+<div class="container proj__inner">
+<div class="proj__copy">
+<span class="proj__num">07</span>
+<span class="proj__cat">Automation</span>
+<h2 class="proj__title">Connected Business Workflows</h2>
+<p class="proj__desc">Leads, messages, customers and tasks don't stay disconnected — they move automatically between the right systems, so nothing waits on someone to pass it along by hand.</p>
+<div aria-hidden="true" class="proj__flow">
+<span>INPUT</span><em>→</em><span>PROCESS</span><em>→</em><span>AUTOMATE</span><em>→</em><span>RESULT</span>
+</div>
+<ul class="proj__caps">
+<li>Workflow automation</li>
+<li>Lead routing</li>
+<li>Automated actions</li>
+<li>Customer processing</li>
+<li>System integration</li>
+<li>Business efficiency</li>
+</ul>
+<a class="proj__cta" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Connected%20Business%20Workflows%20project." rel="noopener noreferrer" target="_blank">
+          Explore Project
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+<div class="proj__visual">
+<img alt="Multiple customer records routed through a workflow into a business dashboard" loading="lazy" src="assets/projects/project07-workflow.jpg"/>
+</div>
+</div>
+</section>
+<!-- 08 — Smarter Customer Support -->
+<section class="proj proj--p08" data-category="digital" data-reveal="">
+<span class="proj__index">08 / 08</span>
+<div aria-hidden="true" class="proj__bubbles">
+<span></span><span></span><span></span><span></span>
+</div>
+<div class="container proj__inner proj--reverse">
+<div class="proj__visual">
+<img alt="Customer support headset with chat bubbles and satisfaction analytics" loading="lazy" src="assets/projects/project08-support.jpg"/>
+</div>
+<div class="proj__copy">
+<span class="proj__num">08</span>
+<span class="proj__cat">Customer Experience</span>
+<h2 class="proj__title">Smarter Customer Support</h2>
+<p class="proj__desc">Faster, more organized customer communication through intelligent systems and support workflows — built to feel human, not automated for its own sake.</p>
+<ul class="proj__caps">
+<li>Customer communication</li>
+<li>Support workflows</li>
+<li>Response management</li>
+<li>Customer satisfaction</li>
+<li>Interaction tracking</li>
+<li>Better service experience</li>
+</ul>
+<a class="proj__cta" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Smarter%20Customer%20Support%20project." rel="noopener noreferrer" target="_blank">
+          Explore Project
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- ============================================
+     Closing
+     ============================================ -->
+<section class="proj-closing">
+<div aria-hidden="true" class="proj-closing__glow"></div>
+<div class="container proj-closing__inner">
+<p class="proj-eyebrow" style="justify-content:center"><span class="dot"></span> What Can We Build Next?</p>
+<h2 class="proj-heading">Your next idea could be the next system we build.</h2>
+<p class="proj-closing__desc">From automation and customer systems to growth, communication and digital experiences — Zenext.ai can help turn the right idea into a practical solution.</p>
+<a class="btn btn--primary" href="contact.html">Start a project</a>
+</div>
+</section>
+</main>
+<!-- ============================================
+     Footer — unchanged from Phase 1, Work link updated
+     ============================================ -->
+<footer class="footer">
+<div class="container">
+<div class="footer__top">
+<div class="footer__brand-block">
+<div class="footer__brand">
+<img alt="Zenext.ai" src="assets/logo-icon.png"/>
+<span>Zenext<em>.ai</em></span>
+</div>
+<p class="footer__tagline" data-i18n="footer.tagline">Systems that keep your business moving.</p>
+</div>
+<div class="footer__social">
+<a aria-label="Zenext.ai on Instagram" href="https://www.instagram.com/zennext.ai?igsi=MWIyZ3A3NWZlOWh0cg==" rel="noopener noreferrer" target="_blank"><img alt="Instagram logo" class="footer__social-logo" src="assets/social/instagram.jpg"/>
+
+<span>Instagram</span>
+</a>
+<a aria-label="Zenext.ai on LinkedIn" href="https://www.linkedin.com/in/aashish-kushwah-0821ba380?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" rel="noopener noreferrer" target="_blank"><img alt="LinkedIn logo" class="footer__social-logo" src="assets/social/linkedin.jpg"/>
+
+<span>LinkedIn</span>
+</a>
+<a aria-label="Zenext.ai on Facebook" href="https://www.facebook.com/share/1cNXXtgRaE/" rel="noopener noreferrer" target="_blank"><img alt="Facebook logo" class="footer__social-logo" src="assets/social/facebook.jpg"/>
+
+<span>Facebook</span>
+</a>
+</div>
+</div>
+<div class="footer__grid">
+<div>
+<p class="footer__heading" data-i18n="footer.navHeading">Navigate</p>
+<ul class="footer__links">
+<li><a data-i18n="nav.home" href="index.html#top">Home</a></li>
+<li><a data-i18n="nav.services" href="services.html">Services</a></li>
+<li><a data-i18n="nav.work" href="projects.html">Work</a></li>
+<li><a data-i18n="nav.about" href="about.html">About</a></li>
+<li><a data-i18n="nav.blog" href="blog.html">Blog</a></li>
+</ul>
+</div>
+<div>
+<p class="footer__heading" data-i18n="footer.servicesHeading">Services</p>
+<ul class="footer__links">
+<li><a data-i18n="card1.name" href="services.html#explorer">AI Automation &amp; Agents</a></li>
+<li><a data-i18n="tab.whatsapp.name" href="services.html#wa-feature">WhatsApp Automation</a></li>
+<li><a data-i18n="card3.name" href="services.html#explorer">Website Development</a></li>
+<li><a data-i18n="card5.name" href="services.html#explorer">Digital Advertising</a></li>
+</ul>
+</div>
+<div>
+<p class="footer__heading" data-i18n="footer.contactHeading">Contact</p>
+<ul class="footer__links">
+<li><strong>Aashish Kushwah</strong></li>
+<li><a href="tel:+917470739101">+91 7470739101</a></li>
+<li><a data-i18n="footer.whatsapp" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20talk%20about%20a%20project." rel="noopener noreferrer" target="_blank">Chat on WhatsApp</a></li>
+<li>Khargone, Madhya Pradesh</li>
+</ul>
+</div>
+</div>
+<div class="footer__bottom">
+<span>© <span id="footerYear">2026</span> Zenext.ai. <span data-i18n="footer.rights">All rights reserved.</span></span>
+</div>
+</div>
+</footer>
+<!-- ============================================
+     Floating WhatsApp Button — unchanged from Phase 1
+     ============================================ -->
+<a aria-label="Chat with Zenext.ai on WhatsApp" class="whatsapp-btn" href="https://wa.me/917470739101?text=Hi%20Zenext.ai%2C%20I%27d%20like%20to%20talk%20about%20a%20project." rel="noopener noreferrer" target="_blank"><span class="whatsapp-btn__tip">Chat with us</span>
+<span class="whatsapp-btn__ring"></span>
+<svg fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.02 3C9.4 3 4 8.37 4 15c0 2.29.64 4.43 1.75 6.26L4 29l7.94-1.7A11.9 11.9 0 0016.02 27C22.65 27 28 21.63 28 15S22.65 3 16.02 3z" fill="#fff"></path>
+<path d="M16.02 5.2c5.4 0 9.8 4.38 9.8 9.8 0 5.42-4.4 9.8-9.8 9.8-1.83 0-3.53-.5-5-1.37l-.36-.21-3.9.99.97-3.8-.24-.39A9.72 9.72 0 016.22 15c0-5.42 4.4-9.8 9.8-9.8z" fill="#25D366"></path>
+<path d="M12.3 9.9c-.24-.53-.5-.54-.73-.55h-.62c-.22 0-.57.08-.87.4-.3.3-1.13 1.1-1.13 2.7 0 1.58 1.16 3.11 1.32 3.33.16.21 2.24 3.55 5.5 4.83 2.72 1.07 3.28.86 3.87.8.59-.05 1.9-.77 2.17-1.52.27-.75.27-1.39.19-1.52-.08-.14-.3-.22-.63-.38-.32-.16-1.9-.94-2.2-1.05-.29-.1-.5-.16-.72.17-.21.32-.83 1.04-1.02 1.26-.19.21-.37.24-.7.08-.32-.16-1.35-.5-2.57-1.6-.95-.85-1.6-1.9-1.78-2.22-.19-.32-.02-.5.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.22.05-.4-.03-.56-.08-.16-.7-1.76-.99-2.4z" fill="#fff"></path>
+</svg>
+</a>
+<script src="js/main.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/chatbot-knowledge.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/whatsapp-tip.js"></script></body>
+</html>
