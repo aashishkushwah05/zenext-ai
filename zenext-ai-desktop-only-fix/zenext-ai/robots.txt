@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zenext.ai/sitemap.xml
+Sitemap: https://zenext-ai-official.vercel.app/sitemap.xml
